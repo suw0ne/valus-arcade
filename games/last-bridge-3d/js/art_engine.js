@@ -115,7 +115,7 @@
   }
 
   function setupStudioRenderer(renderer, scene) {
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.outputEncoding = THREE.sRGBEncoding;
@@ -156,7 +156,57 @@
     rim.position.set(20, 14, -22);
     scene.add(rim);
 
+    scene.userData.sunLight = sun;
     return { sun, hemi, rim };
+  }
+
+  // 모바일 저사양 기기 60fps 방어용 동적 DPR·그림자·파티클 자동 스케일러
+  function createAdaptiveQualityGuard(renderer, scene) {
+    const rawDpr = window.devicePixelRatio || 1;
+    const tiers = [Math.min(rawDpr, 1.75), Math.min(rawDpr, 1.25), 1.0];
+    const pScales = [1.0, 0.65, 0.45];
+    let tier = 0;
+    let frames = 0;
+    let accum = 0;
+    let goodWindows = 0;
+    const guard = {
+      particleScale: 1.0,
+      sample(dt) {
+        if (dt <= 0 || dt > 0.25) return;
+        frames++;
+        accum += dt;
+        if (accum < 1.2) return;
+        const fps = frames / accum;
+        frames = 0;
+        accum = 0;
+        const sun = scene && scene.userData ? scene.userData.sunLight : null;
+        if (fps < 42) {
+          goodWindows = 0;
+          if (tier < tiers.length - 1) {
+            tier++;
+            renderer.setPixelRatio(tiers[tier]);
+            guard.particleScale = pScales[tier];
+          } else if (fps < 30 && sun && sun.castShadow) {
+            sun.castShadow = false;
+            renderer.shadowMap.enabled = false;
+          }
+        } else if (fps > 55) {
+          goodWindows++;
+          if (goodWindows >= 2) {
+            goodWindows = 0;
+            if (sun && !sun.castShadow) {
+              sun.castShadow = true;
+              renderer.shadowMap.enabled = true;
+            } else if (tier > 0) {
+              tier--;
+              renderer.setPixelRatio(tiers[tier]);
+              guard.particleScale = pScales[tier];
+            }
+          }
+        }
+      },
+    };
+    return guard;
   }
 
   function buildSkyAndOcean(scene) {
@@ -821,6 +871,7 @@
 
   global.ValusArt3D = {
     setupStudioRenderer,
+    createAdaptiveQualityGuard,
     buildSkyAndOcean,
     buildSuspensionBridge,
     createArtLibrary,

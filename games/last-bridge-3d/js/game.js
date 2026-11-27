@@ -929,11 +929,13 @@
   rebuildSquadVisuals();
   applyI18n();
 
+  const qualityGuard = art.createAdaptiveQualityGuard ? art.createAdaptiveQualityGuard(renderer, scene) : null;
   let lastTime = performance.now();
   function animate(now) {
     requestAnimationFrame(animate);
     const dt = (now - lastTime) / 1000;
     lastTime = now;
+    if (qualityGuard) qualityGuard.sample(dt);
     update(dt, now * 0.001);
     renderer.render(scene, camera);
   }

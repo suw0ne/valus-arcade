@@ -1,6 +1,23 @@
 [
   {
     "date": "2026-11-27",
+    "gameSlug": "portal",
+    "gameTitle": { "ko": "3D 브릿지 시리즈 1·2·3호 — 모바일 Adaptive DPR 60fps 최적화", "en": "3D Bridge Series #01–03 — Mobile Adaptive DPR 60fps Guard" },
+    "version": "v2.3.1",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "라스트 브릿지 3D · 캐논 크라우드 3D · 헬기 스트라이크 3D 전작에 모바일 저사양 자동 품질 스케일링(Adaptive DPR 상한 1.75 → 1.25 → 1.0) 탑재",
+        "실시간 프레임 모니터링 기반 저FPS 감지 시 그림자·파티클 경량화 자동 전환 및 회복 시 자동 복원 적용으로 보급형 스마트폰에서도 안정적 60fps 확보"
+      ],
+      "en": [
+        "Added Adaptive DPR scaling (1.75 → 1.25 → 1.0) across Last Bridge 3D, Cannon Crowd 3D, and Heli Strike 3D for smooth 60fps mobile play.",
+        "Automatic real-time shadow & particle load balancing on low-FPS frames with seamless quality recovery."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-27",
     "gameSlug": "heli-strike-3d",
     "gameTitle": { "ko": "헬기 스트라이크 3D: 브릿지 시즈 (시리즈 #03)", "en": "HELI STRIKE 3D: BRIDGE SIEGE (Series #03)" },
     "version": "v1.0.0",

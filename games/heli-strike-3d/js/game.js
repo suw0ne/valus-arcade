@@ -253,6 +253,7 @@
 
   const scene = new THREE.Scene();
   ART.setupStudioRenderer(renderer, scene);
+  const qualityGuard = ART.createAdaptiveQualityGuard ? ART.createAdaptiveQualityGuard(renderer, scene) : null;
 
   const camera = new THREE.PerspectiveCamera(48, wrap.clientWidth / Math.max(1, wrap.clientHeight), 0.5, 420);
   const BASE_CAM_POS = new THREE.Vector3(0, 17.5, 22.5);
@@ -573,7 +574,8 @@
     scene.add(ring);
     blasts.push({ mesh: ring, age: 0, dur: isMega ? 0.46 : 0.28, maxScale: radius * 1.05, kind: "ring" });
 
-    const count = isMega ? 16 : 7;
+    const pScale = qualityGuard ? qualityGuard.particleScale : 1.0;
+    const count = Math.max(3, Math.round((isMega ? 16 : 7) * pScale));
     for (let i = 0; i < count; i++) {
       if (particles.length > 140) break;
       const pMat = new THREE.MeshBasicMaterial({
@@ -932,8 +934,10 @@
 
   function tick(now) {
     requestAnimationFrame(tick);
-    const dt = Math.min(0.05, (now - lastTs) / 1000);
+    const rawDt = (now - lastTs) / 1000;
+    const dt = Math.min(0.05, rawDt);
     lastTs = now;
+    if (qualityGuard) qualityGuard.sample(rawDt);
     state.time += dt;
 
     // 배경 바다·구름·방벽 셰이더 애니메이션

@@ -134,7 +134,7 @@
 
   const camera = new THREE.PerspectiveCamera(45, 1, 0.5, 260);
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputEncoding = THREE.sRGBEncoding;
@@ -911,11 +911,45 @@
   handleResize();
   applyI18n();
 
+  // 모바일 저사양 기기 60fps 방어용 동적 DPR·그림자 자동 스케일러
+  const dprTiers = [Math.min(window.devicePixelRatio || 1, 1.75), Math.min(window.devicePixelRatio || 1, 1.25), 1.0];
+  let dprTier = 0, fpsFrames = 0, fpsAccum = 0, fpsGoodWin = 0;
+  function sampleAdaptiveQuality(dt) {
+    if (dt <= 0 || dt > 0.25) return;
+    fpsFrames++; fpsAccum += dt;
+    if (fpsAccum < 1.2) return;
+    const fps = fpsFrames / fpsAccum;
+    fpsFrames = 0; fpsAccum = 0;
+    if (fps < 42) {
+      fpsGoodWin = 0;
+      if (dprTier < dprTiers.length - 1) {
+        dprTier++;
+        renderer.setPixelRatio(dprTiers[dprTier]);
+      } else if (fps < 30 && sun.castShadow) {
+        sun.castShadow = false;
+        renderer.shadowMap.enabled = false;
+      }
+    } else if (fps > 55) {
+      fpsGoodWin++;
+      if (fpsGoodWin >= 2) {
+        fpsGoodWin = 0;
+        if (!sun.castShadow) {
+          sun.castShadow = true;
+          renderer.shadowMap.enabled = true;
+        } else if (dprTier > 0) {
+          dprTier--;
+          renderer.setPixelRatio(dprTiers[dprTier]);
+        }
+      }
+    }
+  }
+
   let last = performance.now();
   function animate(now) {
     requestAnimationFrame(animate);
     const dt = (now - last) / 1000;
     last = now;
+    sampleAdaptiveQuality(dt);
     update(dt, now * 0.001);
     renderer.render(scene, camera);
   }

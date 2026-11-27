@@ -2,7 +2,7 @@
  * 밸루스 아케이드 경량 오프라인 Service Worker (sw.js).
  * 외부 API/트래킹 0% · 정적 포털 셸 및 게임 번들을 로컬 캐싱해 모바일 재방문 시 0.1초 즉시 실행·오프라인 플레이를 지원한다.
  */
-const CACHE_NAME = "valus-arcade-v2-3-0";
+const CACHE_NAME = "valus-arcade-v2-3-1";
 
 const CORE_ASSETS = [
   "./",
