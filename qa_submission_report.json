@@ -1,5 +1,5 @@
 {
-  "checked_at_kst": "2026-11-27 17:34:42 KST",
+  "checked_at_kst": "2026-11-27 18:28:26 KST",
   "total_live_games": 8,
   "passed_games": 8,
   "all_pass": true,
@@ -13,8 +13,8 @@
         "version": "2.0.0",
         "js_checked": 4,
         "zip_sizes": {
-          "crazygames": 180671,
-          "poki": 180670
+          "crazygames": 181193,
+          "poki": 181192
         },
         "cover_size": "1280x720"
       }
@@ -28,8 +28,8 @@
         "version": "2.0.0",
         "js_checked": 3,
         "zip_sizes": {
-          "crazygames": 171390,
-          "poki": 171393
+          "crazygames": 171752,
+          "poki": 171755
         },
         "cover_size": "1280x720"
       }
@@ -43,8 +43,8 @@
         "version": "1.0.0",
         "js_checked": 4,
         "zip_sizes": {
-          "crazygames": 182505,
-          "poki": 182506
+          "crazygames": 183085,
+          "poki": 183086
         },
         "cover_size": "1280x720"
       }
