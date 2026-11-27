@@ -31,6 +31,7 @@ const CORE_ASSETS = [
   "./games/cannon-crowd-3d/index.html",
   "./games/cannon-crowd-3d/css/style.css",
   "./games/cannon-crowd-3d/js/three.min.js",
+  "./games/cannon-crowd-3d/js/RoomEnvironment.js",
   "./games/cannon-crowd-3d/js/game.js",
   "./games/neon-vanguard/index.html",
   "./games/neon-vanguard/css/style.css",
