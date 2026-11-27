@@ -5,7 +5,7 @@
       "ko": "설치 없이 1초 만에 바로 플레이 · 매주 신작 출시 & 라이브 패치",
       "en": "Instant Play HTML5 Games · Weekly Releases & Live Patches"
     },
-    "updatedAt": "2026-11-26"
+    "updatedAt": "2026-11-27"
   },
   "games": [
     {
@@ -53,6 +53,30 @@
       "cover": "assets/cover_cannon-crowd-3d.png",
       "playUrl": "games/cannon-crowd-3d/index.html",
       "monetization": ["보상형 광고(×4 메가 게이트·챔피언 3기 부활·골드 2배)", "캐논 업그레이드"],
+      "releasedAt": "2026-11-27",
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "slug": "heli-strike-3d",
+      "status": "live",
+      "featured": false,
+      "badge": { "ko": "3D PBR 신작 · #03", "en": "3D PBR NEW · #03" },
+      "version": "1.0.0",
+      "genre": "series3d",
+      "genreLabel": { "ko": "3D 건십 브릿지 디펜스", "en": "3D Gunship Bridge Defense" },
+      "title": { "ko": "헬기 스트라이크 3D: 브릿지 시즈", "en": "HELI STRIKE 3D: BRIDGE SIEGE" },
+      "shortDesc": {
+        "ko": "3D 웹광고 시리즈 3호! 골든아워 해상 현수교 상공에서 공격 헬기 30mm 발칸을 조준해 붉은 연료통 연쇄 폭파와 8연장 호밍 미사일로 메카 보스를 격파하라",
+        "en": "3D Web-Ad Series #03! Aim your 30mm Apache rotary cannon over a golden-hour bridge, chain-detonate red fuel barrels & crush Crimson Mech Bosses."
+      },
+      "controls": {
+        "ko": "조준 & 자동연사: 화면 드래그 · 마우스 이동 · WASD/방향키 · 미사일 일제 사격: 하단 버튼 / SPACE",
+        "en": "Aim & Auto-Fire: Drag · Move Mouse · WASD/Arrows · Missile Salvo: Bottom Button / SPACE"
+      },
+      "tags": ["3D웹GL", "공격헬기", "연쇄폭파", "보스전", "브릿지시리즈"],
+      "cover": "assets/cover_heli-strike-3d.png",
+      "playUrl": "games/heli-strike-3d/index.html",
+      "monetization": ["보상형 광고(긴급 지원폭격·100% 방벽 복구·골드 2배)", "헬기 화력 업그레이드"],
       "releasedAt": "2026-11-27",
       "updatedAt": "2026-11-27"
     },

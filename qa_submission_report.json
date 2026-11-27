@@ -1,0 +1,128 @@
+{
+  "checked_at_kst": "2026-11-27 17:34:42 KST",
+  "total_live_games": 8,
+  "passed_games": 8,
+  "all_pass": true,
+  "results": [
+    {
+      "slug": "last-bridge-3d",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "last-bridge-3d",
+        "version": "2.0.0",
+        "js_checked": 4,
+        "zip_sizes": {
+          "crazygames": 180671,
+          "poki": 180670
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "cannon-crowd-3d",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "cannon-crowd-3d",
+        "version": "2.0.0",
+        "js_checked": 3,
+        "zip_sizes": {
+          "crazygames": 171390,
+          "poki": 171393
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "heli-strike-3d",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "heli-strike-3d",
+        "version": "1.0.0",
+        "js_checked": 4,
+        "zip_sizes": {
+          "crazygames": 182505,
+          "poki": 182506
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "neon-vanguard",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "neon-vanguard",
+        "version": "1.1.0",
+        "js_checked": 7,
+        "zip_sizes": {
+          "crazygames": 38561,
+          "poki": 38563
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "core-merge-td",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "core-merge-td",
+        "version": "1.0.0",
+        "js_checked": 1,
+        "zip_sizes": {
+          "crazygames": 11786,
+          "poki": 11787
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "drill-to-core",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "drill-to-core",
+        "version": "1.1.0",
+        "js_checked": 1,
+        "zip_sizes": {
+          "crazygames": 15160,
+          "poki": 15162
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "neon-breaker",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "neon-breaker",
+        "version": "1.0.0",
+        "js_checked": 1,
+        "zip_sizes": {
+          "crazygames": 11494,
+          "poki": 11496
+        },
+        "cover_size": "1280x720"
+      }
+    },
+    {
+      "slug": "neon-drift",
+      "passed": true,
+      "errors": [],
+      "details": {
+        "slug": "neon-drift",
+        "version": "1.0.0",
+        "js_checked": 1,
+        "zip_sizes": {
+          "crazygames": 10103,
+          "poki": 10104
+        },
+        "cover_size": "1280x720"
+      }
+    }
+  ]
+}

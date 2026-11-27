@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>헬기 스트라이크 3D: 브릿지 시즈 | HELI STRIKE 3D</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="heli-shell">
+    <div id="canvas-wrap">
+      <div id="fx-layer" aria-hidden="true"></div>
+    </div>
+
+    <!-- 상단 HUD -->
+    <header class="top-hud">
+      <div class="hud-row">
+        <div class="pill blue-pill"><span class="lbl">STAGE</span> <strong id="ui-stage">1</strong></div>
+        <div class="shield-bar-wrap">
+          <div class="shield-bar-head">
+            <span>🛡️ <span data-i18n="convoyShield">호송대 방벽</span></span>
+            <strong id="ui-shield-pct">100%</strong>
+          </div>
+          <div class="shield-track"><div id="ui-shield-fill" class="shield-fill" style="width:100%"></div></div>
+        </div>
+        <div class="pill gold-pill"><span class="coin">◆</span> <strong id="ui-gold">0</strong></div>
+        <button id="btn-sound" class="ico-btn" aria-label="Sound">🔊</button>
+        <button id="btn-lang" class="ico-btn">KR</button>
+      </div>
+      <div class="hud-subrow">
+        <span class="mini-pill sky">🌊 <span data-i18n="waveLbl">웨이브</span> <strong id="ui-wave">1/3</strong></span>
+        <span class="mini-pill red">💥 <span data-i18n="killsLbl">격파</span> <strong id="ui-kills">0</strong></span>
+        <span class="mini-pill amber" id="ui-buff-pill">⚡ <strong id="ui-buff">READY</strong></span>
+      </div>
+      <!-- 보스 체력바 (보스 등장 시 표시) -->
+      <div id="boss-hud" class="boss-hud hidden">
+        <div class="boss-head">
+          <span>🤖 <span data-i18n="bossName">크림슨 메카 보스</span></span>
+          <strong id="ui-boss-hp">100%</strong>
+        </div>
+        <div class="boss-track"><div id="ui-boss-fill" class="boss-fill" style="width:100%"></div></div>
+      </div>
+    </header>
+
+    <!-- 하단 전투 스킬 바 -->
+    <div id="battle-dock" class="battle-dock hidden">
+      <button id="btn-salvo" class="salvo-btn" disabled>
+        <span>🚀 <span data-i18n="salvoBtn">미사일 일제 사격!</span></span>
+        <small id="ui-salvo-pct">0%</small>
+      </button>
+      <button id="btn-airstrike" class="airstrike-btn">🎁 <span data-i18n="airstrikeAd">지원 폭격 + 실드</span></button>
+    </div>
+
+    <div id="toast-banner" class="toast-banner hidden"></div>
+
+    <!-- 시작 & 영구 업그레이드 격납고 -->
+    <div id="start-overlay" class="overlay">
+      <div class="panel-card">
+        <span class="series-tag">BRIDGE RUSH 3D SERIES · #03</span>
+        <h1 data-i18n="title">헬기 스트라이크 3D</h1>
+        <p class="subtitle" data-i18n="intro">공격 헬기의 30mm 발칸 포탑을 드래그로 조준하세요! 붉은 연료통을 연쇄 폭파시켜 몰려오는 크림슨 군단과 메카 보스로부터 호송대를 방어하세요!</p>
+
+        <div class="upgrade-grid" id="upgrade-grid"></div>
+
+        <div class="action-stack">
+          <button id="btn-play" class="btn-gloss blue">▶ <span data-i18n="playBtn">공중 화력 지원 출격!</span></button>
+        </div>
+        <div class="drag-hint" data-i18n="dragHint">🎯 화면 드래그 / 마우스 이동으로 자동 조준 사격 · SPACE: 미사일 일제 사격</div>
+      </div>
+    </div>
+
+    <!-- 승리 / 패배 모달 -->
+    <div id="result-overlay" class="overlay hidden">
+      <div class="panel-card">
+        <span id="res-kicker" class="series-tag">BRIDGE SECURED!</span>
+        <h2 id="res-title">교량 방어 작전 성공!</h2>
+        <div class="res-stats">
+          <div><span data-i18n="statKills">적 격파</span><strong id="res-kills">0</strong></div>
+          <div><span data-i18n="statBlasts">연쇄 폭파</span><strong id="res-blasts">0</strong></div>
+          <div><span data-i18n="statGold">획득 골드</span><strong id="res-earned" class="gold-txt">+0</strong></div>
+        </div>
+        <div class="action-stack">
+          <button id="btn-res-revive" class="btn-gloss green hidden">🚀 <span data-i18n="reviveAd">광고 보고 긴급 융단폭격 + 방벽 100% 복구!</span></button>
+          <button id="btn-res-double" class="btn-gloss gold">◆ <span data-i18n="doubleAd">광고 보고 획득 골드 2배!</span></button>
+          <button id="btn-res-next" class="btn-gloss blue" data-i18n="nextStage">다음 작전 &amp; 헬기 개조</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 보상형 광고 프리뷰 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="panel-card compact">
+        <span class="series-tag">REWARDED AD PREVIEW</span>
+        <p class="subtitle" data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold-txt">2.0s</strong>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/RoomEnvironment.js"></script>
+  <script src="js/art_engine.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

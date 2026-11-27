@@ -2,7 +2,7 @@
  * 밸루스 아케이드 경량 오프라인 Service Worker (sw.js).
  * 외부 API/트래킹 0% · 정적 포털 셸 및 게임 번들을 로컬 캐싱해 모바일 재방문 시 0.1초 즉시 실행·오프라인 플레이를 지원한다.
  */
-const CACHE_NAME = "valus-arcade-v2-2-0";
+const CACHE_NAME = "valus-arcade-v2-3-0";
 
 const CORE_ASSETS = [
   "./",
@@ -17,6 +17,7 @@ const CORE_ASSETS = [
   "./assets/icon-512.png",
   "./assets/cover_last-bridge-3d.png",
   "./assets/cover_cannon-crowd-3d.png",
+  "./assets/cover_heli-strike-3d.png",
   "./assets/cover_neon-vanguard.png",
   "./assets/cover_core-merge-td.png",
   "./assets/cover_drill-to-core.png",
@@ -33,6 +34,12 @@ const CORE_ASSETS = [
   "./games/cannon-crowd-3d/js/three.min.js",
   "./games/cannon-crowd-3d/js/RoomEnvironment.js",
   "./games/cannon-crowd-3d/js/game.js",
+  "./games/heli-strike-3d/index.html",
+  "./games/heli-strike-3d/css/style.css",
+  "./games/heli-strike-3d/js/three.min.js",
+  "./games/heli-strike-3d/js/RoomEnvironment.js",
+  "./games/heli-strike-3d/js/art_engine.js",
+  "./games/heli-strike-3d/js/game.js",
   "./games/neon-vanguard/index.html",
   "./games/neon-vanguard/css/style.css",
   "./games/neon-vanguard/js/i18n.js",

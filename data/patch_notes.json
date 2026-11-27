@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-27",
+    "gameSlug": "heli-strike-3d",
+    "gameTitle": { "ko": "헬기 스트라이크 3D: 브릿지 시즈 (시리즈 #03)", "en": "HELI STRIKE 3D: BRIDGE SIEGE (Series #03)" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "3D 웹광고 시리즈 3호 정식 출시! v2.0 스튜디오 PBR(ACESFilmic·RoomEnvironment IBL·2048 소프트 그림자·골든아워 GLSL 스카이/바다) 첫날부터 풀 탑재",
+        "28+ 파츠 조각 3D 블루 공격 헬기(회전 로터·윙 로켓 포드·6총열 회전 발칸·총구 화염)로 한 손 드래그 즉시 조준 사격 및 도미노 연쇄 폭파 레드 연료통 구현",
+        "홀로그램 보급 크레이트(연사 2배·자동 로켓 포드·방벽 복구), 8연장 호밍 미사일 일제 사격, 거대 스파이크 크림슨 메카 보스전 및 4대 영구 업그레이드 완비"
+      ],
+      "en": [
+        "Official Launch of 3D Web-Ad Series #03! Built from Day 1 on Studio PBR v2.0 (ACESFilmic, RoomEnvironment IBL, 2048 soft shadows, GLSL golden-hour sky & ocean).",
+        "Pilot a 28+ part sculpted 3D Attack Helicopter with spinning rotors, gimballed 6-barrel 30mm Vulcan, and domino chain-exploding red fuel barrels.",
+        "Features tactical Holo Supply Crates, 8-missile Homing Salvo ultimate, Spiked Crimson Mech Boss fights, and 4 permanent upgrades."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-27",
     "gameSlug": "last-bridge-3d",
     "gameTitle": { "ko": "라스트 브릿지 3D — 그래픽·모델링 v2.0 전면 리마스터", "en": "LAST BRIDGE 3D — Studio PBR & Modeling v2.0 Remaster" },
     "version": "v2.0.0",
