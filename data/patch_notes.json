@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-27",
+    "gameSlug": "last-bridge-3d",
+    "gameTitle": { "ko": "라스트 브릿지 3D: 스쿼드 러시 (시리즈 #01)", "en": "LAST BRIDGE 3D: SQUAD RUSH (Series #01)" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "신규 3D 웹광고 시리즈 1호 정식 출시! Three.js 실시간 3D WebGL·주간 태양광·실시간 그림자·아스팔트 현수교 그래픽 전면 업그레이드",
+        "사격으로 빨간 마이너스 게이트를 파란 플러스 게이트로 뒤집는 게이트 반전 시스템, ×2 스쿼드 증폭, 무기 드럼통 5단계 진화(기관단총→로켓) 탑재",
+        "골든 크레이트 파괴 시 3D 전술 장갑 탱크 포격 지원, 스테이지 종착점 타이탄 보스전 및 영구 4대 기지 업그레이드 완비"
+      ],
+      "en": [
+        "Official Launch of Bridge Rush 3D Series #01! Powered by real-time Three.js 3D WebGL with sunlit bridge lighting & soft shadows.",
+        "Shoot red negative gates to flip them blue, multiply your 3D armored squad, and break weapon barrels across 5 gun tiers up to Tactical Rockets.",
+        "Features deployable 3D Tactical Battle Tank, Giant Titan Boss finale, and 4 permanent squad upgrades."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-27",
     "gameSlug": "neon-drift",
     "gameTitle": { "ko": "네온 드리프트: 하이퍼 런", "en": "NEON DRIFT: HYPER RUN" },
     "version": "v1.0.0",

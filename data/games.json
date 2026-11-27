@@ -9,9 +9,33 @@
   },
   "games": [
     {
-      "slug": "neon-vanguard",
+      "slug": "last-bridge-3d",
       "status": "live",
       "featured": true,
+      "badge": { "ko": "3D 대표신작 · #01", "en": "3D FLAGSHIP · #01" },
+      "version": "1.0.0",
+      "genre": "series3d",
+      "genreLabel": { "ko": "3D 게이트 슈팅 시리즈", "en": "3D Gate Shooter Series" },
+      "title": { "ko": "라스트 브릿지 3D: 스쿼드 러시", "en": "LAST BRIDGE 3D: SQUAD RUSH" },
+      "shortDesc": {
+        "ko": "광고로만 보던 그 3D 브릿지 게이트 슈팅을 100% 실제 게임으로! 빨간 게이트를 쏴 파란 배수로 뒤집고, 무기 드럼통·전술 탱크·거대 타이탄 보스까지 돌파하라",
+        "en": "The viral 3D bridge gate-shooter ad made into a real game! Flip red gates blue, smash weapon barrels, deploy a battle tank & crush the Titan Boss."
+      },
+      "controls": {
+        "ko": "스쿼드 조종: 화면 좌우 드래그 · 마우스 드래그 · A/D 또는 방향키 (자동 연사 · 1손 모바일 완벽 지원)",
+        "en": "Steer Squad: Drag Left/Right · Mouse Drag · A/D or Arrow Keys (Auto-Fire · One-Thumb Mobile Ready)"
+      },
+      "tags": ["3D웹GL", "게이트슈팅", "스쿼드증식", "보스전", "브릿지시리즈"],
+      "cover": "assets/cover_last-bridge-3d.png",
+      "playUrl": "games/last-bridge-3d/index.html",
+      "monetization": ["보상형 광고(+8 출격·+12 부활·골드 2배)", "스쿼드 업그레이드 팩"],
+      "releasedAt": "2026-11-27",
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "slug": "neon-vanguard",
+      "status": "live",
+      "featured": false,
       "badge": { "ko": "인기 · v1.1 패치", "en": "HOT · v1.1" },
       "version": "1.1.0",
       "genre": "action",

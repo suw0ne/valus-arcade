@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>라스트 브릿지 3D: 스쿼드 러시 | LAST BRIDGE 3D</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <!-- Three.js 3D WebGL 뷰포트 -->
+    <div id="canvas-wrap">
+      <div id="fx-layer" aria-hidden="true"></div>
+      <div id="squad-float-badge" class="squad-float hidden">3</div>
+    </div>
+
+    <!-- 상용 모바일 게임 스타일 상단 HUD -->
+    <header class="top-hud">
+      <div class="hud-row">
+        <div class="pill stage-pill">
+          <span class="pill-lbl" data-i18n="stage">STAGE</span>
+          <strong id="ui-stage">1</strong>
+        </div>
+        <div class="progress-shell">
+          <div class="progress-track">
+            <div id="ui-progress-fill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <span class="progress-boss-ico" title="BOSS">👹</span>
+        </div>
+        <div class="pill gold-pill">
+          <span class="coin-dot">◆</span>
+          <strong id="ui-gold">0</strong>
+        </div>
+        <button id="btn-sound" class="ico-btn" aria-label="Sound">🔊</button>
+        <button id="btn-lang" class="ico-btn lang">KR</button>
+      </div>
+      <div class="hud-subrow">
+        <span class="mini-tag blue"><span data-i18n="squad">병력</span> <strong id="ui-squad">3</strong></span>
+        <span class="mini-tag orange" id="ui-weapon">Lv.1 기관단총</span>
+        <span class="mini-tag purple hidden" id="ui-tank-tag">🛡️ 전술 탱크 지원중</span>
+      </div>
+      <!-- 보스전 체력 바 -->
+      <div id="boss-hud" class="boss-hud hidden">
+        <div class="boss-head">
+          <span data-i18n="bossName">타이탄 브릿지 보스</span>
+          <strong id="ui-boss-hp">100%</strong>
+        </div>
+        <div class="boss-track"><div id="ui-boss-fill" class="boss-fill" style="width:100%"></div></div>
+      </div>
+    </header>
+
+    <!-- 중앙 알림 배너 -->
+    <div id="toast-banner" class="toast-banner hidden"></div>
+
+    <!-- 시작 & 영구 업그레이드 격납고 오버레이 (뒤로 3D 브릿지와 스쿼드가 실시간 렌더링됨) -->
+    <div id="start-overlay" class="overlay">
+      <div class="panel-card">
+        <span class="series-tag">BRIDGE RUSH 3D SERIES · #01</span>
+        <h1 data-i18n="title">라스트 브릿지 3D</h1>
+        <p class="subtitle" data-i18n="intro">좌우 드래그로 빨간 게이트를 쏴 파란 게이트로 뒤집고, 스쿼드를 수십 명으로 불려 무기 진화와 거대 보스까지 돌파하세요!</p>
+
+        <div class="upgrade-row" id="upgrade-grid"></div>
+
+        <div class="action-stack">
+          <button id="btn-ad-boost" class="btn-gloss gold">🎁 <span data-i18n="adStartBoost">광고 보고 +8 정예 병력으로 출격!</span></button>
+          <button id="btn-play" class="btn-gloss blue">▶ <span data-i18n="playBtn">브릿지 돌파 출격!</span></button>
+        </div>
+        <div class="drag-hint" data-i18n="dragHint">← 좌우 드래그 / 마우스 / 방향키로 스쿼드 조종 →</div>
+      </div>
+    </div>
+
+    <!-- 스테이지 클리어 / 패배 결과 모달 -->
+    <div id="result-overlay" class="overlay hidden">
+      <div class="panel-card">
+        <span id="res-kicker" class="series-tag">STAGE CLEAR!</span>
+        <h2 id="res-title">브릿지 돌파 성공!</h2>
+        <div class="res-stats">
+          <div><span data-i18n="kills">적 격파</span><strong id="res-kills">0</strong></div>
+          <div><span data-i18n="maxSquad">최대 병력</span><strong id="res-maxsquad">0</strong></div>
+          <div><span data-i18n="earned">획득 골드</span><strong id="res-earned" class="gold-txt">+0</strong></div>
+        </div>
+        <div class="action-stack">
+          <button id="btn-res-revive" class="btn-gloss green hidden">🛡️ <span data-i18n="reviveAd">광고 보고 +12 병력 긴급 증원 부활!</span></button>
+          <button id="btn-res-double" class="btn-gloss gold">◆ <span data-i18n="doubleAd">광고 보고 획득 골드 2배 받기!</span></button>
+          <button id="btn-res-next" class="btn-gloss blue" data-i18n="nextStage">다음 스테이지 &amp; 업그레이드</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 보상형 광고 프리뷰 모달 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="panel-card compact">
+        <span class="series-tag">REWARDED AD PREVIEW</span>
+        <p class="subtitle" data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold-txt">2.0s</strong>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

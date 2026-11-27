@@ -7,6 +7,7 @@
 - 특징: PWA 오프라인 플레이 지원, 외부 API 0%, 개인정보 수집 0% (로컬 저장소만 사용), 한국어·영어 지원
 
 ## 라이브 게임 라인업
+- [라스트 브릿지 3D: 스쿼드 러시 (LAST BRIDGE 3D: SQUAD RUSH)](https://suw0ne.github.io/valus-arcade/play.html?game=last-bridge-3d): 3D 게이트 슈팅 시리즈 · v1.0.0 — 광고로만 보던 그 3D 브릿지 게이트 슈팅을 100% 실제 게임으로! 빨간 게이트를 쏴 파란 배수로 뒤집고, 무기 드럼통·전술 탱크·거대 타이탄 보스까지 돌파하라
 - [네온 뱅가드: 오버드라이브 (NEON VANGUARD: OVERDRIVE)](https://suw0ne.github.io/valus-arcade/play.html?game=neon-vanguard): 액션 로그라이트 · v1.1.0 — 6종 무기 초월 진화와 보스 탄막 회피! 이동과 대시로 무한 웨이브를 돌파하는 아레나 액션
 - [코어 머지 디펜스 (CORE MERGE TD)](https://suw0ne.github.io/valus-arcade/play.html?game=core-merge-td): 머지 타워 디펜스 · v1.0.0 — 같은 등급 포탑을 드래그로 합쳐 전설 터렛으로 진화! 4대 속성 시너지로 밀려오는 웨이브를 막아라
 - [드릴 투 코어 (DRILL TO CORE)](https://suw0ne.github.io/valus-arcade/play.html?game=drill-to-core): 물리 굴착 성장 · v1.1.0 — 5개 지하 지층을 뚫고 1,200m 행성 코어까지! 연속 콤보 피버·자석/실드 유물·심도 미니맵 탑재 굴착 아케이드

@@ -29,6 +29,7 @@
       catalogTitle: "아케이드 라인업",
       catalogSub: "새로운 게임이 계속 추가되고 기존 게임은 플레이 피드백에 맞춰 꾸준히 패치됩니다.",
       genreAll: "전체",
+      genreSeries3d: "🔥 3D 브릿지 시리즈",
       genreAction: "액션",
       genreStrategy: "전략·디펜스",
       genreArcade: "아케이드",
@@ -73,6 +74,7 @@
       catalogTitle: "Arcade Lineup",
       catalogSub: "New HTML5 games drop continuously alongside live balance and content patches.",
       genreAll: "All",
+      genreSeries3d: "🔥 3D Bridge Series",
       genreAction: "Action",
       genreStrategy: "Strategy / TD",
       genreArcade: "Arcade",
@@ -138,6 +140,7 @@
     const pill = document.getElementById("trophy-count-pill");
     if (!wrap || !pill) return;
 
+    const lb = readLocalJson("nv_last_bridge_save_v1");
     const nv = readLocalJson("nv_overdrive_save_v1");
     const td = readLocalJson("nv_merge_td_save_v1");
     const dr = readLocalJson("nv_drill_core_save_v1");
@@ -150,6 +153,13 @@
     };
 
     const entries = [
+      {
+        slug: "last-bridge-3d",
+        name: lang === "ko" ? "라스트 브릿지 3D" : "LAST BRIDGE 3D",
+        val: lb.bestStage ? `STAGE ${lb.bestStage}` : t("noRecord"),
+        sub: lang === "ko" ? "트로피 조건: 스테이지 1 보스 격파" : "Trophy: Clear Stage 1 Boss",
+        unlocked: (lb.bestStage || 0) >= 1,
+      },
       {
         slug: "neon-vanguard",
         name: lang === "ko" ? "네온 뱅가드" : "NEON VANGUARD",
