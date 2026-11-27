@@ -268,7 +268,8 @@
   const starFlashTex = ART.makeStarFlashTexture();
   const barrelTex = ART.createBarrelLabelTexture();
   const heli = ART.createAttackHelicopter(starFlashTex);
-  heli.position.set(-5.4, 9.6, 13.8);
+  heli.position.set(-4.0, 12.0, 9.6);
+  heli.scale.setScalar(0.88);
   scene.add(heli);
 
   const crosshair = ART.createCrosshair3D();
@@ -981,13 +982,14 @@
     const chScale = lockedHot ? 1.15 + Math.sin(state.time * 18) * 0.08 : 1.0;
     crosshair.scale.setScalar(chScale);
 
-    // 헬기 로터 회전 + 다이내믹 뱅킹 호버링 + 발칸 포탑 조준
+    // 헬기 로터 회전 + 다이내믹 뱅킹 호버링 + 발칸 포탑 조준 (카메라 좌상단 전경 뷰 고정)
     heli.userData.mainRotor.rotation.y += dt * 28;
     heli.userData.tailRotor.rotation.x += dt * 36;
-    const targetHeliX = -4.2 + aimPoint.x * 0.42;
-    const targetHeliY = 9.4 + Math.sin(state.time * 2.4) * 0.36;
+    const targetHeliX = -4.0 + aimPoint.x * 0.28;
+    const targetHeliY = 12.0 + Math.sin(state.time * 2.4) * 0.34;
     heli.position.x += (targetHeliX - heli.position.x) * Math.min(1, dt * 4.5);
     heli.position.y += (targetHeliY - heli.position.y) * Math.min(1, dt * 5.0);
+    heli.position.z = 9.6;
     heli.rotation.z = -(targetHeliX - heli.position.x) * 0.18 - aimPoint.x * 0.025;
     heli.rotation.y = -aimPoint.x * 0.045;
     heli.rotation.x = -0.14 + Math.sin(state.time * 1.9) * 0.025;

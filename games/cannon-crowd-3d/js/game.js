@@ -130,7 +130,7 @@
   // ==================== 스튜디오 PBR 3D 공성전 씬 ====================
   const container = document.getElementById("canvas-wrap");
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x9bdcff, 0.0068);
+  scene.fog = new THREE.FogExp2(0x88c8f2, 0.0024);
 
   const camera = new THREE.PerspectiveCamera(45, 1, 0.5, 260);
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
@@ -139,7 +139,7 @@
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.14;
+  renderer.toneMappingExposure = 0.92;
   container.insertBefore(renderer.domElement, container.firstChild);
 
   if (THREE.RoomEnvironment) {
@@ -148,8 +148,8 @@
     pmrem.dispose();
   }
 
-  scene.add(new THREE.HemisphereLight(0xc7ecff, 0x166534, 0.92));
-  const sun = new THREE.DirectionalLight(0xfff1cf, 1.45);
+  scene.add(new THREE.HemisphereLight(0xbbe6ff, 0x166534, 0.62));
+  const sun = new THREE.DirectionalLight(0xfff1cf, 1.15);
   sun.position.set(-18, 28, 18);
   sun.castShadow = true;
   sun.shadow.mapSize.width = 2048;
