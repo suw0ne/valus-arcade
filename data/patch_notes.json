@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-27",
+    "gameSlug": "last-bridge-3d",
+    "gameTitle": { "ko": "라스트 브릿지 3D — 그래픽·모델링 v2.0 전면 리마스터", "en": "LAST BRIDGE 3D — Studio PBR & Modeling v2.0 Remaster" },
+    "version": "v2.0.0",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "스튜디오 PBR 렌더링 파이프라인 전면 교체: ACESFilmic 톤매핑 + RoomEnvironment IBL 금속 반사 + 2048 소프트 그림자 + 골든아워 GLSL 스카이 돔·입체 구름·파도 바다 셰이더 탑재",
+        "캐릭터·오브젝트 모델링 전면 재제작: 20+ 파츠 조각 3D 블루 장갑 병사(곡면 숄더 패드·발광 바이저·6총열 회전 골든 미니건·총구 화염·접지 그림자), 10륜 궤도 탱크, 스파이크 크림슨 타이탄 보스",
+        "실제 포물선 현수 케이블(TubeGeometry)·수직 행거·가로등이 스쳐 지나가는 1024px 범프 아스팔트 현수교 및 로우 앵글 3인칭 시네마틱 카메라 적용"
+      ],
+      "en": [
+        "Full Studio PBR Pipeline Overhaul: ACESFilmic tone mapping, RoomEnvironment metallic IBL, 2048 soft shadows, GLSL Golden-Hour Sky Dome, 3D clouds & animated ocean shader.",
+        "Sculpted 20+ part 3D armored squad soldiers (curved pauldrons, glowing cyan visors, spinning 6-barrel Golden Miniguns, muzzle flashes), 10-wheel Battle Tank & spiked Crimson Titan Boss.",
+        "Added real parabolic suspension cables (TubeGeometry), 1024px asphalt bump maps, and dramatic low-angle over-the-shoulder action camera."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-27",
     "gameSlug": "cannon-crowd-3d",
     "gameTitle": { "ko": "캐논 크라우드 3D: 성채 돌파 (시리즈 #02)", "en": "CANNON CROWD 3D: CASTLE RUSH (Series #02)" },
     "version": "v1.0.0",

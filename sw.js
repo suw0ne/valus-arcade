@@ -2,7 +2,7 @@
  * 밸루스 아케이드 경량 오프라인 Service Worker (sw.js).
  * 외부 API/트래킹 0% · 정적 포털 셸 및 게임 번들을 로컬 캐싱해 모바일 재방문 시 0.1초 즉시 실행·오프라인 플레이를 지원한다.
  */
-const CACHE_NAME = "valus-arcade-v2-1-0";
+const CACHE_NAME = "valus-arcade-v2-2-0";
 
 const CORE_ASSETS = [
   "./",
@@ -25,6 +25,8 @@ const CORE_ASSETS = [
   "./games/last-bridge-3d/index.html",
   "./games/last-bridge-3d/css/style.css",
   "./games/last-bridge-3d/js/three.min.js",
+  "./games/last-bridge-3d/js/RoomEnvironment.js",
+  "./games/last-bridge-3d/js/art_engine.js",
   "./games/last-bridge-3d/js/game.js",
   "./games/cannon-crowd-3d/index.html",
   "./games/cannon-crowd-3d/css/style.css",
