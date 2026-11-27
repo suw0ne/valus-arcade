@@ -151,6 +151,7 @@
     if (!wrap || !pill) return;
 
     const lb = readLocalJson("nv_last_bridge_save_v1");
+    const cc = readLocalJson("nv_cannon_crowd_save_v1");
     const nv = readLocalJson("nv_overdrive_save_v1");
     const td = readLocalJson("nv_merge_td_save_v1");
     const dr = readLocalJson("nv_drill_core_save_v1");
@@ -169,6 +170,13 @@
         val: lb.bestStage ? `STAGE ${lb.bestStage}` : t("noRecord"),
         sub: lang === "ko" ? "트로피 조건: 스테이지 1 보스 격파" : "Trophy: Clear Stage 1 Boss",
         unlocked: (lb.bestStage || 0) >= 1,
+      },
+      {
+        slug: "cannon-crowd-3d",
+        name: lang === "ko" ? "캐논 크라우드 3D" : "CANNON CROWD 3D",
+        val: cc.bestStage ? `STAGE ${cc.bestStage}` : t("noRecord"),
+        sub: lang === "ko" ? "트로피 조건: 스테이지 1 성채 함락" : "Trophy: Conquer Stage 1",
+        unlocked: (cc.bestStage || 0) >= 1,
       },
       {
         slug: "neon-vanguard",

@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-27",
+    "gameSlug": "cannon-crowd-3d",
+    "gameTitle": { "ko": "캐논 크라우드 3D: 성채 돌파 (시리즈 #02)", "en": "CANNON CROWD 3D: CASTLE RUSH (Series #02)" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "3D 웹광고 시리즈 2호 정식 출시! Three.js 주간 초원·석재 공성로·3D 푸른 캐논 & 붉은 성채 실시간 공성전",
+        "화면을 꾹 누르고 좌우 드래그해 움직이는 ×2·×3·×4 배수 게이트로 최대 110기 대군을 동시 분열시키는 몹컨트롤 쾌감 구현",
+        "100% 충전 시 거대 3D 골든 타이탄 챔피언 출격, 보상형 광고(×4 메가 게이트·챔피언 3기 부활·골드 2배) 및 4대 영구 업그레이드 탑재"
+      ],
+      "en": [
+        "Official Launch of 3D Web-Ad Series #02! Sunlit Three.js siege valley with 3D Blue Siege Cannon and towering Red Fortress.",
+        "Press & drag to swarm 110+ blue troopers through moving ×2/×3/×4 multiplier gates in real-time crowd clashes.",
+        "Charge & unleash Giant 3D Golden Titan Champions, summon ×4 Mega Gates, and unlock 4 permanent cannon upgrades."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-27",
     "gameSlug": "last-bridge-3d",
     "gameTitle": { "ko": "라스트 브릿지 3D: 스쿼드 러시 (시리즈 #01)", "en": "LAST BRIDGE 3D: SQUAD RUSH (Series #01)" },
     "version": "v1.0.0",

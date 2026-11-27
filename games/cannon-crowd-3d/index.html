@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>캐논 크라우드 3D: 성채 돌파 | CANNON CROWD 3D</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="crowd-shell">
+    <div id="canvas-wrap">
+      <div id="fx-layer" aria-hidden="true"></div>
+    </div>
+
+    <!-- 상단 HUD -->
+    <header class="top-hud">
+      <div class="hud-row">
+        <div class="pill blue-pill"><span class="lbl">STAGE</span> <strong id="ui-stage">1</strong></div>
+        <div class="castle-hp-wrap">
+          <div class="castle-hp-head">
+            <span>🏰 <span data-i18n="castleHp">적 성채 내구도</span></span>
+            <strong id="ui-castle-hp">100</strong>
+          </div>
+          <div class="castle-hp-track"><div id="ui-castle-fill" class="castle-hp-fill" style="width:100%"></div></div>
+        </div>
+        <div class="pill gold-pill"><span class="coin">◆</span> <strong id="ui-gold">0</strong></div>
+        <button id="btn-sound" class="ico-btn" aria-label="Sound">🔊</button>
+        <button id="btn-lang" class="ico-btn">KR</button>
+      </div>
+      <div class="hud-subrow">
+        <span class="mini-pill blue">🛡️ <span data-i18n="allies">아군</span> <strong id="ui-allies">0</strong></span>
+        <span class="mini-pill red">⚔️ <span data-i18n="enemies">적군</span> <strong id="ui-enemies">0</strong></span>
+        <span class="mini-pill green">❤️ <span data-i18n="wallHp">캐논 방벽</span> <strong id="ui-wall">100%</strong></span>
+      </div>
+    </header>
+
+    <!-- 하단 챔피언 발사 & 광고 메가 게이트 바 -->
+    <div id="battle-dock" class="battle-dock hidden">
+      <button id="btn-champion" class="champ-btn" disabled>
+        <span>👑 <span data-i18n="champBtn">골든 챔피언 출격!</span></span>
+        <small id="ui-champ-pct">0%</small>
+      </button>
+      <button id="btn-mega-gate" class="mega-btn">🎁 <span data-i18n="megaGate">×4 게이트 소환</span></button>
+    </div>
+
+    <div id="toast-banner" class="toast-banner hidden"></div>
+
+    <!-- 시작 & 영구 업그레이드 격납고 -->
+    <div id="start-overlay" class="overlay">
+      <div class="panel-card">
+        <span class="series-tag">BRIDGE RUSH 3D SERIES · #02</span>
+        <h1 data-i18n="title">캐논 크라우드 3D</h1>
+        <p class="subtitle" data-i18n="intro">화면을 누른 채 좌우로 드래그해 푸른 군단을 발사하세요! 움직이는 ×2·×3 배수 게이트를 통과해 대군으로 적 성채를 함락시키세요!</p>
+
+        <div class="upgrade-grid" id="upgrade-grid"></div>
+
+        <div class="action-stack">
+          <button id="btn-play" class="btn-gloss blue">▶ <span data-i18n="playBtn">성채 돌파 전투 시작!</span></button>
+        </div>
+        <div class="drag-hint" data-i18n="dragHint">← 꾹 누르고 좌우 드래그(또는 A/D + SPACE)로 대군 발사 →</div>
+      </div>
+    </div>
+
+    <!-- 승리 / 패배 모달 -->
+    <div id="result-overlay" class="overlay hidden">
+      <div class="panel-card">
+        <span id="res-kicker" class="series-tag">CASTLE CONQUERED!</span>
+        <h2 id="res-title">적 성채 함락 성공!</h2>
+        <div class="res-stats">
+          <div><span data-i18n="spawned">총 출격 병력</span><strong id="res-spawned">0</strong></div>
+          <div><span data-i18n="defeated">적 격파</span><strong id="res-defeated">0</strong></div>
+          <div><span data-i18n="earned">획득 골드</span><strong id="res-earned" class="gold-txt">+0</strong></div>
+        </div>
+        <div class="action-stack">
+          <button id="btn-res-revive" class="btn-gloss green hidden">👑 <span data-i18n="reviveAd">광고 보고 골든 챔피언 3기 긴급 지원!</span></button>
+          <button id="btn-res-double" class="btn-gloss gold">◆ <span data-i18n="doubleAd">광고 보고 획득 골드 2배!</span></button>
+          <button id="btn-res-next" class="btn-gloss blue" data-i18n="nextStage">다음 성채 &amp; 업그레이드</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 보상형 광고 프리뷰 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="panel-card compact">
+        <span class="series-tag">REWARDED AD PREVIEW</span>
+        <p class="subtitle" data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold-txt">2.0s</strong>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

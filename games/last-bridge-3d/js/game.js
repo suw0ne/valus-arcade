@@ -1170,22 +1170,33 @@
   });
 
   let dragging = false;
+  let activePointerId = null;
   let dragLastX = 0;
   container.addEventListener("pointerdown", (e) => {
-    if (state !== "playing" && state !== "boss") return;
+    if ((state !== "playing" && state !== "boss") || activePointerId !== null) return;
     SFX.unlock();
+    activePointerId = e.pointerId;
     dragging = true;
     dragLastX = e.clientX;
+    try { container.setPointerCapture(e.pointerId); } catch (_) {}
   });
   window.addEventListener("pointermove", (e) => {
-    if (!dragging || (state !== "playing" && state !== "boss")) return;
+    if (!dragging || e.pointerId !== activePointerId || (state !== "playing" && state !== "boss")) return;
     const dx = e.clientX - dragLastX;
     dragLastX = e.clientX;
     const sens = (ROAD_W / Math.max(280, container.clientWidth)) * 1.45;
     targetX = Math.max(-HALF_X, Math.min(HALF_X, targetX + dx * sens));
   });
-  window.addEventListener("pointerup", () => { dragging = false; });
-  window.addEventListener("pointercancel", () => { dragging = false; });
+  window.addEventListener("pointerup", (e) => {
+    if (e.pointerId !== activePointerId) return;
+    activePointerId = null;
+    dragging = false;
+  });
+  window.addEventListener("pointercancel", (e) => {
+    if (e.pointerId !== activePointerId) return;
+    activePointerId = null;
+    dragging = false;
+  });
 
   document.getElementById("btn-sound").onclick = (e) => {
     SFX.on = !SFX.on;
