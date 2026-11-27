@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>코어 머지 디펜스 | CORE MERGE TD</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="td-shell">
+    <!-- 상단 HUD -->
+    <header class="td-hud">
+      <div class="hud-group">
+        <div class="chip wave-chip"><span data-i18n="wave">웨이브</span> <strong id="ui-wave">1</strong></div>
+        <div class="chip hp-chip">❤️ <strong id="ui-hp">20</strong></div>
+        <div class="chip gold-chip"><span class="coin-dot">◆</span> <strong id="ui-gold">120</strong></div>
+      </div>
+      <div class="hud-group">
+        <button id="btn-speed" class="ctrl-chip">1x</button>
+        <button id="btn-sound" class="ctrl-chip">🔊</button>
+        <button id="btn-lang" class="ctrl-chip">KR/EN</button>
+      </div>
+    </header>
+
+    <!-- 보스 체력바 -->
+    <div id="boss-bar" class="boss-bar hidden">
+      <div class="boss-row"><span id="boss-name">CORE BREAKER BOSS</span><span id="boss-pct">100%</span></div>
+      <div class="boss-track"><div id="boss-fill" class="boss-fill"></div></div>
+    </div>
+
+    <!-- 캔버스 전장 -->
+    <div class="canvas-stage">
+      <canvas id="td-canvas"></canvas>
+      <div id="toast-msg" class="toast-msg hidden"></div>
+    </div>
+
+    <!-- 하단 컨트롤 도크 -->
+    <footer class="td-dock">
+      <button id="btn-summon" class="btn-summon">
+        <span class="btn-main">+ <span data-i18n="summon">포탑 소환</span></span>
+        <span id="ui-cost" class="btn-sub">◆ 40</span>
+      </button>
+      <button id="btn-emp" class="btn-skill">
+        <span class="btn-main">⚡ <span data-i18n="emp">EMP 충격파</span></span>
+        <span id="ui-emp-cd" class="btn-sub" data-i18n="ready">준비됨</span>
+      </button>
+      <button id="btn-supply" class="btn-reward">
+        <span class="btn-main">🎁 <span data-i18n="supply">티어2 보급</span></span>
+        <span class="btn-sub" data-i18n="adFree">광고 보상</span>
+      </button>
+    </footer>
+
+    <!-- 시작 오버레이 -->
+    <div id="start-overlay" class="overlay">
+      <div class="modal-card">
+        <span class="kicker" data-i18n="kicker">MERGE × TOWER DEFENSE</span>
+        <h1 data-i18n="title">코어 머지 디펜스</h1>
+        <p data-i18n="intro">같은 속성·같은 등급의 포탑을 드래그해 합치면 강력한 전설 포탑으로 진화합니다!</p>
+        <div class="legend-row">
+          <span>⚡ 펄스</span><span>❄️ 빙결</span><span>💥 폭격</span><span>🌩️ 번개</span>
+        </div>
+        <button id="btn-start" class="btn-start" data-i18n="start">방어 작전 시작</button>
+      </div>
+    </div>
+
+    <!-- 게임오버 / 부활 모달 -->
+    <div id="gameover-overlay" class="overlay hidden">
+      <div class="modal-card">
+        <h2 data-i18n="defeat">코어 방어 실패!</h2>
+        <p id="ui-final-stats" class="final-stats"></p>
+        <div class="modal-btns">
+          <button id="btn-revive" class="btn-reward full">⚡ <span data-i18n="reviveAd">광고 보고 코어 수복 + 계속하기 (1회)</span></button>
+          <button id="btn-retry" class="btn-start full" data-i18n="retry">처음부터 다시 도전</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 광고 시뮬레이터 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="modal-card compact">
+        <span class="kicker">REWARDED AD PREVIEW</span>
+        <p data-i18n="adSimDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold">2.0s</strong>
+      </div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

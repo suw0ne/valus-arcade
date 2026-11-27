@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>네온 뱅가드: 오버드라이브 | NEON VANGUARD: OVERDRIVE</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- 상단 유틸리티 바 (로비) -->
+    <div id="top-util-bar">
+      <span id="sdk-badge" class="pill-badge">로컬 테스트 모드</span>
+      <span id="no-ads-badge" class="pill-badge gold hidden">광고 제거 패스 적용중</span>
+      <div class="util-actions">
+        <button id="btn-lang" class="icon-btn" title="언어 전환">KR / EN</button>
+        <button id="btn-sfx" class="icon-btn" title="효과음">🔊</button>
+        <button id="btn-bgm" class="icon-btn" title="배경음악">🎵</button>
+      </div>
+    </div>
+
+    <!-- 인게임 HUD -->
+    <div id="hud" class="hidden">
+      <div class="xp-bar-wrap">
+        <div id="xp-fill" class="xp-fill"></div>
+        <span id="hud-level" class="xp-level">LV 1</span>
+      </div>
+
+      <div class="hud-row">
+        <div class="hud-left">
+          <div id="hud-loadout" class="loadout-strip"></div>
+        </div>
+        <div class="hud-center">
+          <div id="hud-timer" class="hud-timer">00:00</div>
+          <div id="hud-wave" class="hud-wave">WAVE 1</div>
+        </div>
+        <div class="hud-right">
+          <div class="hud-stat">💀 <span id="hud-kills">0</span></div>
+          <div class="hud-stat gold"><span class="coin-dot">◆</span> <span id="hud-gold">0</span></div>
+          <button id="btn-pause" class="hud-pause-btn" aria-label="일시 정지">⏸</button>
+        </div>
+      </div>
+
+      <!-- 보스 체력바 -->
+      <div id="boss-hud" class="boss-hud hidden">
+        <div class="boss-name-row">
+          <span id="boss-name">APEX WARDEN</span>
+          <span id="boss-hp-text">100%</span>
+        </div>
+        <div class="boss-bar-bg"><div id="boss-bar-fill" class="boss-bar-fill"></div></div>
+      </div>
+
+      <!-- 중앙 이벤트 배너 -->
+      <div id="event-banner" class="event-banner hidden"></div>
+
+      <!-- 우측 하단 대시 버튼 (PC/모바일 공용) -->
+      <button id="btn-dash" class="dash-btn" aria-label="대시">
+        <div id="dash-cd-mask" class="dash-cd-mask"></div>
+        <span class="dash-icon">⚡</span>
+        <span id="dash-label" class="dash-label">SPACE</span>
+      </button>
+    </div>
+
+    <!-- 로비 오버레이 -->
+    <section id="lobby-screen" class="overlay-screen">
+      <div class="lobby-card">
+        <div class="brand-kicker" data-i18n="tagline">무한 웨이브 · 무기 진화 · 보스 챌린지 아레나 액션</div>
+        <h1 class="game-logo">
+          <span class="logo-main" data-i18n="title">네온 뱅가드</span>
+          <span class="logo-sub" data-i18n="subtitle">OVERDRIVE</span>
+        </h1>
+
+        <div class="lobby-stats">
+          <div class="stat-pill">
+            <span class="label" data-i18n="totalGold">보유 코어 골드</span>
+            <strong id="lobby-gold" class="val gold">250</strong>
+          </div>
+          <div class="stat-pill">
+            <span class="label" data-i18n="bestTime">최고 생존</span>
+            <strong id="lobby-best-time" class="val">00:00</strong>
+          </div>
+          <div class="stat-pill">
+            <span class="label" data-i18n="bestKills">최고 격파</span>
+            <strong id="lobby-best-kills" class="val">0</strong>
+          </div>
+        </div>
+
+        <!-- 작전 구역 선택 -->
+        <div class="stage-picker">
+          <button id="stage-btn-1" class="stage-chip active" data-stage="1" data-i18n="stage1">구역 01 · 사이버 그리드</button>
+          <button id="stage-btn-2" class="stage-chip" data-stage="2" data-i18n="stage2">구역 02 · 레드 오버로드 (1.5배 골드)</button>
+        </div>
+
+        <button id="btn-play" class="btn-primary-giant" data-i18n="play">출격 시작</button>
+
+        <div class="lobby-nav-grid">
+          <button id="btn-open-armory" class="btn-secondary">⚔️ <span data-i18n="armory">연구소 (영구강화)</span></button>
+          <button id="btn-open-hangar" class="btn-secondary">🚀 <span data-i18n="hangar">기체 격납고</span></button>
+          <button id="btn-open-shop" class="btn-secondary accent">💎 <span data-i18n="shop">상점 (하이브리드)</span></button>
+        </div>
+
+        <p class="controls-hint" data-i18n="controlsHint">이동: WASD / 방향키 / 마우스 드래그 · 대시: SPACE / 우클릭</p>
+      </div>
+    </section>
+
+    <!-- 레벨업 스킬 선택 모달 -->
+    <section id="levelup-modal" class="overlay-screen hidden">
+      <div class="modal-panel wide">
+        <h2 class="modal-title" data-i18n="levelUpTitle">전투 시스템 업그레이드</h2>
+        <p class="modal-sub" data-i18n="levelUpSub">강화할 무기 또는 패시브 코어 1개를 선택하세요</p>
+        <div id="choice-cards" class="choice-grid"></div>
+        <div class="modal-footer-row">
+          <button id="btn-reroll" class="btn-reward-outline">🎲 <span id="reroll-text" data-i18n="rerollAd">광고 보고 리롤</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 일시정지 모달 -->
+    <section id="pause-modal" class="overlay-screen hidden">
+      <div class="modal-panel compact">
+        <h2 class="modal-title" data-i18n="pauseTitle">일시 정지</h2>
+        <div class="stack-btns">
+          <button id="btn-resume" class="btn-primary" data-i18n="resume">전투 재개</button>
+          <button id="btn-pause-restart" class="btn-secondary" data-i18n="restart">처음부터 재출격</button>
+          <button id="btn-pause-lobby" class="btn-ghost" data-i18n="toLobby">격납고로 복귀</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 긴급 부활 제안 모달 (보상형 광고 핵심 지점) -->
+    <section id="revive-modal" class="overlay-screen hidden">
+      <div class="modal-panel compact danger-border">
+        <div class="danger-icon">⚠️</div>
+        <h2 class="modal-title danger" data-i18n="reviveTitle">기체 파괴 임박!</h2>
+        <p class="modal-sub" data-i18n="reviveDesc">긴급 프로토콜로 체력 100% 회복 + 주변 적 전멸 충격파를 발동할 수 있습니다.</p>
+        <div class="stack-btns">
+          <button id="btn-revive-ad" class="btn-reward-solid">⚡ <span id="revive-btn-text" data-i18n="reviveAdBtn">광고 보고 즉시 부활 (1회)</span></button>
+          <button id="btn-give-up" class="btn-secondary" data-i18n="giveUpBtn">결과 확인하기</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 게임 오버 결과 모달 -->
+    <section id="gameover-modal" class="overlay-screen hidden">
+      <div class="modal-panel compact">
+        <h2 class="modal-title" data-i18n="gameOverTitle">작전 종료</h2>
+        <div class="result-grid">
+          <div class="result-box"><span data-i18n="statTime">생존 시간</span><strong id="res-time">00:00</strong></div>
+          <div class="result-box"><span data-i18n="statKills">총 격파 수</span><strong id="res-kills">0</strong></div>
+          <div class="result-box"><span data-i18n="statLevel">도달 레벨</span><strong id="res-level">1</strong></div>
+          <div class="result-box"><span data-i18n="statGold">획득 골드</span><strong id="res-gold" class="gold">+0</strong></div>
+        </div>
+        <div class="stack-btns">
+          <button id="btn-double-gold" class="btn-reward-solid">💰 <span id="double-gold-text" data-i18n="doubleGoldAd">광고 보고 골드 2배 수령</span></button>
+          <button id="btn-retry" class="btn-primary" data-i18n="playAgain">바로 재출격</button>
+          <button id="btn-go-armory" class="btn-secondary" data-i18n="armory">연구소 (영구강화)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 영구강화 연구소 / 기체 격납고 / 하이브리드 상점 공용 드로어 모달 -->
+    <section id="meta-modal" class="overlay-screen hidden">
+      <div class="modal-panel wide">
+        <div class="modal-header-bar">
+          <div>
+            <h2 id="meta-title" class="modal-title">영구 강화 연구소</h2>
+            <p id="meta-desc" class="modal-sub"></p>
+          </div>
+          <div class="meta-header-right">
+            <div class="gold-chip"><span class="coin-dot">◆</span> <span id="meta-gold">0</span></div>
+            <button id="btn-close-meta" class="icon-btn" aria-label="닫기">✕</button>
+          </div>
+        </div>
+        <div id="meta-body" class="meta-grid"></div>
+      </div>
+    </section>
+
+    <!-- 로컬 보상형 광고 시뮬레이터 모달 -->
+    <section id="ad-sim-modal" class="overlay-screen hidden">
+      <div class="modal-panel compact">
+        <div class="ad-sim-badge">REWARDED AD PREVIEW</div>
+        <h3 class="modal-title" data-i18n="adSimTitle">보상형 광고 시뮬레이터 (로컬 테스트)</h3>
+        <p class="modal-sub" data-i18n="adSimDesc">포털(CrazyGames/Poki) 배포 시 실제 글로벌 보상형 광고가 재생됩니다.</p>
+        <div class="ad-progress-bg"><div id="ad-sim-bar" class="ad-progress-fill"></div></div>
+        <p id="ad-sim-timer" class="ad-timer-text">2.5s</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/sdk_adapter.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "portal": {
+    "name": { "ko": "밸루스 아케이드", "en": "VALUS ARCADE" },
+    "tagline": {
+      "ko": "설치 없이 1초 만에 바로 플레이 · 매주 신작 출시 & 라이브 패치",
+      "en": "Instant Play HTML5 Games · Weekly Releases & Live Patches"
+    },
+    "updatedAt": "2026-11-26"
+  },
+  "games": [
+    {
+      "slug": "neon-vanguard",
+      "status": "live",
+      "featured": true,
+      "badge": { "ko": "인기 · v1.1 패치", "en": "HOT · v1.1" },
+      "version": "1.1.0",
+      "genre": "action",
+      "genreLabel": { "ko": "액션 로그라이트", "en": "Action Roguelite" },
+      "title": { "ko": "네온 뱅가드: 오버드라이브", "en": "NEON VANGUARD: OVERDRIVE" },
+      "shortDesc": {
+        "ko": "6종 무기 초월 진화와 보스 탄막 회피! 이동과 대시로 무한 웨이브를 돌파하는 아레나 액션",
+        "en": "6 weapon evolutions & intense boss waves. Dodge, dash, and overdrive through endless swarms."
+      },
+      "controls": {
+        "ko": "이동: WASD / 방향키 / 화면 드래그 · 대시(무적): SPACE / 우클릭 · 스킬 선택: 1/2/3",
+        "en": "Move: WASD / Arrows / Drag · Dash: SPACE / Right-Click · Skills: 1/2/3"
+      },
+      "tags": ["로그라이트", "탄막액션", "보스전", "모바일지원"],
+      "cover": "assets/cover_neon-vanguard.png",
+      "playUrl": "games/neon-vanguard/index.html",
+      "monetization": ["보상형 광고(부활·리롤·2배)", "광고 제거 패스", "기체 번들"],
+      "releasedAt": "2026-11-26",
+      "updatedAt": "2026-11-26"
+    },
+    {
+      "slug": "core-merge-td",
+      "status": "live",
+      "featured": false,
+      "badge": { "ko": "신작 · v1.0", "en": "NEW · v1.0" },
+      "version": "1.0.0",
+      "genre": "strategy",
+      "genreLabel": { "ko": "머지 타워 디펜스", "en": "Merge Tower Defense" },
+      "title": { "ko": "코어 머지 디펜스", "en": "CORE MERGE TD" },
+      "shortDesc": {
+        "ko": "같은 등급 포탑을 드래그로 합쳐 전설 터렛으로 진화! 4대 속성 시너지로 밀려오는 웨이브를 막아라",
+        "en": "Drag & merge matching turrets into legendary evolutions! Defend the core with 4 elemental synergies."
+      },
+      "controls": {
+        "ko": "포탑 소환: 하단 소환 버튼 · 포탑 합치기: 같은 등급·속성 포탑을 드래그 · 2배속/EMP 스킬 클릭",
+        "en": "Summon Turret: Summon Button · Merge: Drag matching turrets together · Toggle 2x Speed & EMP"
+      },
+      "tags": ["머지게임", "타워디펜스", "전략", "한손조작"],
+      "cover": "assets/cover_core-merge-td.png",
+      "playUrl": "games/core-merge-td/index.html",
+      "monetization": ["보상형 광고(EMP·보급·2배)", "광고 제거 패스"],
+      "releasedAt": "2026-11-26",
+      "updatedAt": "2026-11-26"
+    },
+    {
+      "slug": "drill-to-core",
+      "status": "live",
+      "featured": false,
+      "badge": { "ko": "패치 · v1.1", "en": "PATCH · v1.1" },
+      "version": "1.1.0",
+      "genre": "arcade",
+      "genreLabel": { "ko": "물리 굴착 성장", "en": "Physics Digging" },
+      "title": { "ko": "드릴 투 코어", "en": "DRILL TO CORE" },
+      "shortDesc": {
+        "ko": "5개 지하 지층을 뚫고 1,200m 행성 코어까지! 연속 콤보 피버·자석/실드 유물·심도 미니맵 탑재 굴착 아케이드",
+        "en": "Drill through 5 layers to 1,200m! Now featuring Combo Fever, Magnet/Shield relics, and depth minimap."
+      },
+      "controls": {
+        "ko": "좌우 조종: A/D · 방향키 · 화면 드래그 · 터보 드릴(암석 관통): SPACE / 우측 하단 버튼",
+        "en": "Steer: A/D · Arrows · Drag · Turbo Boost (Smash Rocks): SPACE / Bottom-Right Button"
+      },
+      "tags": ["물리아케이드", "업그레이드", "콤보피버", "모바일지원"],
+      "cover": "assets/cover_drill-to-core.png",
+      "playUrl": "games/drill-to-core/index.html",
+      "monetization": ["보상형 광고(긴급연료·판매가2배)", "하이브리드 팩"],
+      "releasedAt": "2026-11-26",
+      "updatedAt": "2026-11-26"
+    },
+    {
+      "slug": "neon-breaker",
+      "status": "live",
+      "featured": false,
+      "badge": { "ko": "신작 · v1.0", "en": "NEW · v1.0" },
+      "version": "1.0.0",
+      "genre": "arcade",
+      "genreLabel": { "ko": "로그라이트 벽돌깨기", "en": "Roguelite Brick Breaker" },
+      "title": { "ko": "네온 브레이커: 로그라이트", "en": "NEON BREAKER: ROGUELITE" },
+      "shortDesc": {
+        "ko": "드래그 조준 한 방에 50+ 네온 볼 연쇄 폭발! 레이저·폭탄 블록과 3스테이지 로그라이트 진화 카드로 무한 콤보 돌파",
+        "en": "Aim once, unleash 50+ bouncing plasma balls! Trigger row lasers, bombs, and roguelite perk evolutions."
+      },
+      "controls": {
+        "ko": "조준 & 발사: 마우스 또는 화면 드래그 후 놓기 · 즉시 회수: 상단 회수 버튼 (한 손 모바일 최적화)",
+        "en": "Aim & Fire: Drag and release · Recall Balls: Top Recall button (One-hand mobile friendly)"
+      },
+      "tags": ["벽돌깨기", "로그라이트", "한손조작", "타격감"],
+      "cover": "assets/cover_neon-breaker.png",
+      "playUrl": "games/neon-breaker/index.html",
+      "monetization": ["보상형 광고(카드 리롤·2줄 파괴 부활)", "광고 제거 패스"],
+      "releasedAt": "2026-11-26",
+      "updatedAt": "2026-11-26"
+    }
+  ]
+}

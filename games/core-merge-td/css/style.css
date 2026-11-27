@@ -1,0 +1,108 @@
+/* 코어 머지 디펜스 — 반응형 네온 전략 UI */
+:root {
+  --bg: #070b18;
+  --panel: rgba(15, 23, 42, 0.92);
+  --border: rgba(56, 189, 248, 0.3);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --cyan: #38bdf8;
+  --gold: #facc15;
+  --rose: #f43f5e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+  word-break: keep-all;
+}
+.hidden { display: none !important; }
+.coin-dot, .gold { color: var(--gold); }
+
+#td-shell {
+  width: 100vw; height: 100vh;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+
+.td-hud {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; background: rgba(10, 16, 32, 0.95);
+  border-bottom: 1px solid var(--border); gap: 8px; flex-wrap: wrap; z-index: 10;
+}
+.hud-group { display: flex; align-items: center; gap: 8px; }
+.chip {
+  background: #13203b; border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 10px; font-size: 13px; font-weight: 800;
+  white-space: nowrap;
+}
+.ctrl-chip {
+  background: #1e293b; border: 1px solid var(--border); color: var(--text);
+  padding: 6px 11px; border-radius: 9px; font-size: 12px; font-weight: 800; cursor: pointer;
+}
+.ctrl-chip.active { background: #2563eb; border-color: var(--cyan); }
+
+.boss-bar {
+  position: absolute; top: 58px; left: 50%; transform: translateX(-50%);
+  width: min(420px, 88vw); z-index: 12;
+  background: rgba(24, 8, 18, 0.9); border: 1px solid var(--rose);
+  border-radius: 10px; padding: 6px 10px;
+}
+.boss-row { display: flex; justify-content: space-between; font-size: 11px; font-weight: 900; color: #fda4af; margin-bottom: 4px; }
+.boss-track { height: 8px; background: #1f0a12; border-radius: 999px; overflow: hidden; }
+.boss-fill { height: 100%; width: 100%; background: linear-gradient(90deg, #dc2626, #fb7185); }
+
+.canvas-stage { position: relative; flex: 1; min-height: 0; overflow: hidden; }
+#td-canvas { width: 100%; height: 100%; display: block; touch-action: none; }
+
+.toast-msg {
+  position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.92); border: 1px solid var(--gold); color: var(--gold);
+  padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 900; pointer-events: none;
+}
+
+.td-dock {
+  display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); background: rgba(10, 16, 32, 0.96);
+  border-top: 1px solid var(--border); z-index: 10;
+}
+.td-dock button {
+  border-radius: 14px; padding: 10px 12px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; font-family: inherit; transition: transform 0.1s ease;
+}
+.td-dock button:active { transform: scale(0.96); }
+.td-dock button:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-main { font-size: 14px; font-weight: 900; }
+.btn-sub { font-size: 11px; font-weight: 800; opacity: 0.9; }
+
+.btn-summon { background: linear-gradient(135deg, #2563eb, #06b6d4); border: none; color: #fff; }
+.btn-skill { background: #1e293b; border: 1px solid var(--cyan); color: #bae6fd; }
+.btn-reward { background: linear-gradient(135deg, #f59e0b, #eab308); border: none; color: #0f172a; }
+
+.overlay {
+  position: absolute; inset: 0; z-index: 30;
+  background: rgba(4, 8, 20, 0.78); backdrop-filter: blur(8px);
+  display: grid; place-items: center; padding: 18px;
+}
+.modal-card {
+  width: min(450px, 94vw); background: var(--panel); border: 1px solid var(--border);
+  border-radius: 22px; padding: 26px; text-align: center;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.6);
+}
+.modal-card.compact { width: min(360px, 92vw); }
+.kicker { display: inline-block; font-size: 11px; font-weight: 900; color: var(--cyan); letter-spacing: 0.14em; margin-bottom: 8px; }
+.modal-card h1, .modal-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 10px; }
+.modal-card p { font-size: 13px; color: #cbd5e1; margin-bottom: 16px; }
+.legend-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; font-size: 12px; font-weight: 800; color: var(--gold); }
+.btn-start {
+  width: 100%; padding: 14px; border: none; border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9); color: #fff;
+  font-size: 16px; font-weight: 900; cursor: pointer;
+}
+.modal-btns { display: grid; gap: 10px; }
+.full { width: 100%; padding: 13px; border-radius: 13px; font-size: 14px; font-weight: 900; cursor: pointer; }
+.final-stats { font-size: 15px !important; font-weight: 800; color: var(--gold) !important; }
+.ad-track { height: 10px; background: #1e293b; border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
+.ad-fill { height: 100%; width: 0%; background: var(--gold); }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>드릴 투 코어 | DRILL TO CORE</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="drill-shell">
+    <!-- 인게임 상단 HUD -->
+    <header id="hud" class="hud hidden">
+      <div class="hud-top-row">
+        <div class="metric-pill depth">⬇ <strong id="ui-depth">0m</strong> / 1,200m</div>
+        <div class="metric-pill layer" id="ui-layer">표토 지대</div>
+        <div class="metric-pill gold"><span class="coin-dot">◆</span> <strong id="ui-run-cash">0</strong></div>
+        <div class="hud-btns">
+          <button id="btn-sound" class="mini-btn" aria-label="사운드">🔊</button>
+          <button id="btn-lang" class="mini-btn">KR/EN</button>
+        </div>
+      </div>
+
+      <div class="bars-row">
+        <div class="bar-box">
+          <div class="bar-lbl"><span>⛽ <span data-i18n="fuel">연료</span></span><strong id="ui-fuel-txt">100%</strong></div>
+          <div class="bar-track"><div id="ui-fuel-bar" class="bar-fill fuel"></div></div>
+        </div>
+        <div class="bar-box">
+          <div class="bar-lbl"><span>🛡️ <span data-i18n="hull">내구도</span></span><strong id="ui-hull-txt">100%</strong></div>
+          <div class="bar-track"><div id="ui-hull-bar" class="bar-fill hull"></div></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 전장 캔버스 -->
+    <div class="stage-wrap">
+      <canvas id="drill-canvas"></canvas>
+      <div id="layer-banner" class="layer-banner hidden"></div>
+      <button id="btn-boost" class="boost-btn hidden" aria-label="터보 드릴">
+        <div id="boost-mask" class="boost-mask"></div>
+        <span class="boost-ico">🔥</span>
+        <span id="boost-txt" class="boost-txt">BOOST</span>
+      </button>
+    </div>
+
+    <!-- 타이틀 / 업그레이드 기지 오버레이 -->
+    <section id="hangar-screen" class="overlay">
+      <div class="hangar-card">
+        <div class="hangar-head">
+          <div>
+            <span class="kicker" data-i18n="kicker">PHYSICS DIGGING ARCADE</span>
+            <h1 data-i18n="title">드릴 투 코어</h1>
+          </div>
+          <div class="hangar-right">
+            <div class="wallet-chip"><span class="coin-dot">◆</span> <strong id="ui-wallet">100</strong></div>
+            <button id="btn-lang-lobby" class="mini-btn">KR/EN</button>
+          </div>
+        </div>
+
+        <div class="record-strip">
+          <div><span data-i18n="bestDepth">최고 심도</span><strong id="ui-best-depth">0m</strong></div>
+          <div><span data-i18n="dives">총 탐사</span><strong id="ui-dives">0</strong></div>
+          <div><span data-i18n="coreGoal">목표 심도</span><strong class="gold">1,200m</strong></div>
+        </div>
+
+        <button id="btn-dive" class="btn-dive">▶ <span data-i18n="startDive">지하 굴착 출격!</span></button>
+
+        <div class="up-header">
+          <h2 data-i18n="upgradeTitle">드릴 머신 업그레이드</h2>
+          <span class="hint-txt" data-i18n="controlsHint">좌우 이동: A/D · 방향키 · 드래그 | 터보: SPACE</span>
+        </div>
+        <div id="upgrade-grid" class="upgrade-grid"></div>
+      </div>
+    </section>
+
+    <!-- 긴급 연료/수리 보급 모달 (보상형 광고 핵심 슬롯) -->
+    <section id="rescue-modal" class="overlay hidden">
+      <div class="modal-card danger-ring">
+        <div class="big-ico">⛽</div>
+        <h2 id="rescue-title" data-i18n="fuelOutTitle">연료 고갈!</h2>
+        <p id="rescue-desc" data-i18n="fuelOutDesc">긴급 보급으로 연료와 내구도를 65% 충전하고 지금 심도에서 계속 파고들 수 있습니다!</p>
+        <div class="stack-btns">
+          <button id="btn-rescue-ad" class="btn-reward">⚡ <span data-i18n="rescueAd">광고 보고 긴급 충전 + 계속 굴착 (1회)</span></button>
+          <button id="btn-surface" class="btn-sec" data-i18n="returnSurface">지상으로 귀환 · 광물 정산</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 귀환 정산 모달 -->
+    <section id="summary-modal" class="overlay hidden">
+      <div class="modal-card">
+        <h2 id="sum-title" data-i18n="summaryTitle">지상 귀환 정산</h2>
+        <div class="sum-grid">
+          <div class="sum-box"><span data-i18n="reachedDepth">도달 심도</span><strong id="sum-depth">0m</strong></div>
+          <div class="sum-box"><span data-i18n="minedOres">채굴 광물</span><strong id="sum-ores">0</strong></div>
+          <div class="sum-box wide"><span data-i18n="earnedCash">광물 판매 수익</span><strong id="sum-cash" class="gold">+0</strong></div>
+        </div>
+        <div class="stack-btns">
+          <button id="btn-double-cash" class="btn-reward">💰 <span id="double-txt" data-i18n="doubleCashAd">광고 보고 판매 수익 2배 수령</span></button>
+          <button id="btn-to-hangar" class="btn-dive small" data-i18n="goUpgrade">업그레이드 · 재출격</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 로컬 보상형 광고 미리보기 모달 -->
+    <section id="ad-modal" class="overlay hidden">
+      <div class="modal-card compact">
+        <span class="kicker">REWARDED AD PREVIEW</span>
+        <p data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="bar-track"><div id="ad-bar" class="bar-fill fuel"></div></div>
+        <strong id="ad-timer" class="gold">2.0s</strong>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

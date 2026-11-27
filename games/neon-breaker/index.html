@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>네온 브레이커: 로그라이트 | NEON BREAKER</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="brk-shell">
+    <header class="brk-hud">
+      <div class="hud-left">
+        <div class="chip"><span data-i18n="wave">스테이지</span> <strong id="ui-wave">1</strong></div>
+        <div class="chip cyan">⚪ ×<strong id="ui-balls">6</strong></div>
+        <div class="chip gold">★ <strong id="ui-score">0</strong></div>
+      </div>
+      <div class="hud-right">
+        <button id="btn-recall" class="ctrl-btn hidden" data-i18n="recall">⬇ 즉시 회수</button>
+        <button id="btn-speed" class="ctrl-btn">1x</button>
+        <button id="btn-sound" class="ctrl-btn">🔊</button>
+        <button id="btn-lang" class="ctrl-btn">KR/EN</button>
+      </div>
+    </header>
+
+    <div class="stage-wrap">
+      <canvas id="brk-canvas"></canvas>
+      <div id="combo-toast" class="combo-toast hidden"></div>
+    </div>
+
+    <!-- 시작 화면 -->
+    <div id="start-overlay" class="overlay">
+      <div class="modal-card">
+        <span class="kicker" data-i18n="kicker">ROGUELITE BRICK BREAKER</span>
+        <h1 data-i18n="title">네온 브레이커</h1>
+        <p data-i18n="intro">드래그로 조준해 수십 개의 네온 볼을 발사하세요! 매 3스테이지마다 로그라이트 스킬로 볼을 무한 진화시킬 수 있습니다.</p>
+        <div class="best-row">
+          <div><span data-i18n="bestWave">최고 스테이지</span><strong id="ui-best-wave">0</strong></div>
+          <div><span data-i18n="bestScore">최고 점수</span><strong id="ui-best-score" class="gold">0</strong></div>
+        </div>
+        <button id="btn-start" class="btn-primary" data-i18n="start">▶ 게임 시작</button>
+      </div>
+    </div>
+
+    <!-- 로그라이트 3택 업그레이드 모달 -->
+    <div id="perk-overlay" class="overlay hidden">
+      <div class="modal-card wide">
+        <span class="kicker">ROGUELITE UPGRADE</span>
+        <h2 data-i18n="perkTitle">볼 시스템 진화 선택</h2>
+        <div id="perk-grid" class="perk-grid"></div>
+        <button id="btn-perk-reroll" class="btn-reward small">🎲 <span data-i18n="rerollAd">광고 보고 카드 리롤</span></button>
+      </div>
+    </div>
+
+    <!-- 게임오버 / 부활 모달 -->
+    <div id="gameover-overlay" class="overlay hidden">
+      <div class="modal-card">
+        <h2 data-i18n="gameOver">방어선 돌파됨!</h2>
+        <p id="ui-final" class="final-txt"></p>
+        <div class="stack-btns">
+          <button id="btn-revive" class="btn-reward">💥 <span data-i18n="reviveAd">광고 보고 하단 2줄 파괴 + 부활 (1회)</span></button>
+          <button id="btn-retry" class="btn-primary" data-i18n="retry">다시 도전하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 광고 시뮬레이터 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="modal-card compact">
+        <span class="kicker">REWARDED AD PREVIEW</span>
+        <p data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold">2.0s</strong>
+      </div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

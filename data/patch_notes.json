@@ -1,0 +1,150 @@
+[
+  {
+    "date": "2026-11-26",
+    "gameSlug": "neon-breaker",
+    "gameTitle": { "ko": "네온 브레이커: 로그라이트", "en": "NEON BREAKER: ROGUELITE" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "4호 공식 신작 정식 출시! 드래그 조준 한 방에 수십 개의 플라즈마 볼이 연쇄 타격하는 한 손 로그라이트 벽돌깨기",
+        "특수 블록(+1 멀티볼 · 가로 레이저 빔 · 광역 폭탄)과 3스테이지마다 3택 로그라이트 진화 카드 5종 탑재",
+        "펜타토닉 상승 콤보 음계 Web Audio SFX, 모바일 햅틱 진동, 보상형 광고(리롤·2줄 파괴 부활) 및 CrazyGames/Poki 번들 동시 빌드"
+      ],
+      "en": [
+        "Official Game #4 Launch! One-hand roguelite brick breaker with 50+ bouncing plasma balls and crisp aim preview.",
+        "Features +1 Ball, Row Laser, and Chain Bomb blocks plus 5 stackable roguelite perks every 3 stages.",
+        "Pentatonic combo Web Audio SFX, mobile haptics, rewarded reroll/revive ads, and CrazyGames/Poki export."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "drill-to-core",
+    "gameTitle": { "ko": "드릴 투 코어", "en": "DRILL TO CORE" },
+    "version": "v1.1.0",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "연속 채굴 콤보 피버 시스템 추가 (3콤보 x1.35 · 5콤보 x1.8 · 8콤보+ x2.5 수익 배율 및 고음계 효과음)",
+        "지하 희귀 유물 캡슐 2종 추가 — 자석 오라(8초 광물 자동 흡수) 및 플라즈마 실드(암석 충돌 1회 무효화)",
+        "우측 행성 심도 미니맵(0m→1,200m) 추가, 광물·바위 겹침 생성 원천 방지, 격납고 3열 컴팩트 UI 개편(스크롤 없이 5대 업그레이드 한눈에 확인)"
+      ],
+      "en": [
+        "Added Ore Combo Fever multipliers (up to x2.5 payout) with escalating audio pitch feedback.",
+        "Added rare Magnet Aura (8s auto-collect) and Plasma Shield (blocks 1 collision) underground relics.",
+        "Added planetary depth minimap (0m to 1,200m), non-overlapping row spawns, and compact 3-column Hangar UI."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "portal",
+    "gameTitle": { "ko": "밸루스 아케이드 포털 (통합 기록·트로피)", "en": "VALUS ARCADE (Unified Profile & Trophies)" },
+    "version": "v1.2.0",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "전 게임 통합 '내 아케이드 기록 & 트로피 대시보드' 메인 포털 신설 — 4종 게임의 최고 기록을 로컬 저장소에서 자동 집계",
+        "신작 네온 브레이커 및 드릴 투 코어 v1.1 라이브 탑재, Service Worker 오프라인 캐시 v1.3 및 GEO JSON-LD 6노드 갱신"
+      ],
+      "en": [
+        "Added Unified Player Profile & Trophy Bar on homepage tracking local best records across all 4 live games.",
+        "Integrated Neon Breaker v1.0, Drill To Core v1.1, Service Worker v1.3, and 6-node GEO JSON-LD graph."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "drill-to-core",
+    "gameTitle": { "ko": "드릴 투 코어", "en": "DRILL TO CORE" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "3호 공식 신작 정식 출시! 표토·현무암·크리스탈·마그마·행성 코어(1,200m) 5개 지하 지층 굴착 아케이드",
+        "6종 보석 채굴, 터보 드릴 부스터(기반암·용암 돌파), 5대 머신 영구 업그레이드(드릴·연료·엔진·정제기·장갑) 탑재",
+        "모바일 한 손 드래그 조종·햅틱 진동·보상형 광고(긴급 연료 충전 · 광물 수익 2배) 및 CrazyGames/Poki 번들 동시 지원"
+      ],
+      "en": [
+        "Official Game #3 Launch! Drill across 5 underground layers down to the 1,200m Planetary Core.",
+        "Features 6 rare ores, Turbo Drill Boost (smash bedrock & magma), and 5 permanent rig upgrades.",
+        "Full mobile touch steering, haptic vibration, rewarded refill/2x payout, and CrazyGames/Poki export."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "portal",
+    "gameTitle": { "ko": "밸루스 아케이드 포털 (모바일·PWA)", "en": "VALUS ARCADE (Mobile & PWA)" },
+    "version": "v1.1.0",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "PWA 앱 설치(manifest.json + 오프라인 Service Worker) 탑재 — 홈 화면에 추가 시 주소창 없는 전체화면 앱 실행 및 오프라인 플레이 지원",
+        "모바일 세로(9:16) 몰입형 플레이어 적용 및 코어 머지 디펜스 세로 3×5 자동 적응형 그리드·모바일 햅틱 진동 피드백 추가",
+        "밸루스 랩(Valus Lab) 무료 금융 계산기 상호 크로스링크 연결 및 GitHub Pages 1클릭 0원 배포 스크립트 구축"
+      ],
+      "en": [
+        "Added PWA standalone install (manifest.json + offline Service Worker) for fullscreen offline mobile play.",
+        "Optimized mobile portrait viewport with auto 3x5 portrait grid in Core Merge TD and haptic vibration feedback.",
+        "Connected Valus Lab cross-link and added 1-click zero-cost GitHub Pages deployment automation."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "core-merge-td",
+    "gameTitle": { "ko": "코어 머지 디펜스", "en": "CORE MERGE TD" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "2호 공식 신작 게임 출시! 5×3 전략 그리드 위에서 포탑을 소환·드래그 머지(1~5티어 진화)",
+        "4대 속성 포탑(펄스·빙결·폭격·체인라이트닝)과 5웨이브마다 등장하는 거대 보스전 탑재",
+        "2배속 전투, 긴급 EMP 충격파, 무료 고등급 포탑 보급(보상형 광고) 및 CrazyGames/Poki SDK 연동"
+      ],
+      "en": [
+        "Official Game #2 Launch! Summon and drag-merge turrets across tiers 1 to 5 on a 5x3 tactical grid.",
+        "4 elemental turret classes (Pulse, Frost, Mortar, Arc) with epic boss waves every 5 rounds.",
+        "2x Speed toggle, Emergency EMP shockwave, Rewarded Supply Drop, and CrazyGames/Poki SDK support."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "neon-vanguard",
+    "gameTitle": { "ko": "네온 뱅가드: 오버드라이브", "en": "NEON VANGUARD: OVERDRIVE" },
+    "version": "v1.1.0",
+    "type": "patch",
+    "notes": {
+      "ko": [
+        "초반 3초 몰입감 강화를 위해 출격 직후 선봉 스워머 6기 링 스폰 및 초반 밀도 상향 밸런싱",
+        "Windows 환경 골드 코인 아이콘 깨짐 현상 수정 및 한글 단어 단위 줄바꿈(keep-all) 최적화",
+        "밸루스 아케이드 공식 포털 탑재 및 CrazyGames/Poki 38KB 초경량 번들 동시 빌드 완료"
+      ],
+      "en": [
+        "Boosted first-3-second combat pacing with an immediate 6-unit opening ring and smoother wave ramp.",
+        "Fixed coin glyph rendering across Windows browsers and polished responsive header badges.",
+        "Integrated into VALUS ARCADE portal with 38KB CrazyGames & Poki export bundles."
+      ]
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "gameSlug": "portal",
+    "gameTitle": { "ko": "밸루스 아케이드 포털", "en": "VALUS ARCADE PORTAL" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "자체 웹게임 아케이드 포털 오픈! 설치·회원가입 없이 모든 게임 즉시 실행 및 전체화면 극장 모드 지원",
+        "신작 자동 업로드·패치노트 자동 발행 파이프라인(publish_manager.py) 및 한/영 다국어 지원"
+      ],
+      "en": [
+        "VALUS ARCADE portal launched with zero-install instant play and fullscreen theater mode.",
+        "Automated release & patch-note publishing pipeline with KR/EN language toggle."
+      ]
+    }
+  }
+]

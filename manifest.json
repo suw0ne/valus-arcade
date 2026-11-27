@@ -1,0 +1,27 @@
+{
+  "name": "밸루스 아케이드 | VALUS ARCADE",
+  "short_name": "밸루스 아케이드",
+  "description": "설치 없이 0.2초 만에 즐기는 무료 HTML5 웹게임 아케이드 · 오프라인 플레이 지원",
+  "lang": "ko",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060a16",
+  "theme_color": "#060a16",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

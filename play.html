@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#060a16" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <title>게임 플레이 | 밸루스 아케이드</title>
+  <link rel="stylesheet" href="css/portal.css" />
+</head>
+<body class="play-page">
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">V</span>
+        <div>
+          <strong>밸루스 아케이드</strong>
+          <span class="brand-sub">VALUS ARCADE</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="back-link">← <span data-i18n="backPortal">전체 게임 목록</span></a>
+        <button id="btn-lang" class="lang-btn">KR / EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container play-layout">
+    <!-- 게임 극장 프레임 -->
+    <section class="theater-wrap">
+      <div class="theater-bar">
+        <div class="theater-title-group">
+          <span id="play-genre" class="badge-mini">ACTION</span>
+          <h1 id="play-title">로딩중...</h1>
+          <span id="play-version" class="ver-pill">v1.0.0</span>
+        </div>
+        <div class="theater-controls">
+          <button id="btn-reload-game" class="ctrl-btn">↻ <span data-i18n="reloadGame">재시작</span></button>
+          <button id="btn-fullscreen" class="ctrl-btn primary">⛶ <span data-i18n="fullscreen">전체화면</span></button>
+        </div>
+      </div>
+
+      <div id="iframe-stage" class="iframe-stage">
+        <iframe id="game-frame" src="" title="HTML5 게임 플레이어" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+
+      <div class="play-details-grid">
+        <div class="info-box">
+          <h3 data-i18n="controlsTitle">조작 방법</h3>
+          <p id="play-controls">-</p>
+          <p id="play-desc" class="muted-text"></p>
+        </div>
+        <div class="info-box">
+          <h3 data-i18n="gamePatchTitle">이 게임의 패치 이력</h3>
+          <div id="game-patch-history" class="mini-patch-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 우측 / 하단 추천 게임 및 광고 슬롯 -->
+    <aside class="play-sidebar">
+      <div class="ad-box-slot" data-i18n="adSlotLabel">[AD SLOT · 반응형 사이드 광고 영역]</div>
+      <div class="sidebar-card">
+        <h3 data-i18n="moreGames">다른 게임 바로가기</h3>
+        <div id="related-games" class="related-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/portal.js"></script>
+</body>
+</html>
