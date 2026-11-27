@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-27",
+    "gameSlug": "neon-drift",
+    "gameTitle": { "ko": "네온 드리프트: 하이퍼 런", "en": "NEON DRIFT: HYPER RUN" },
+    "version": "v1.0.0",
+    "type": "release",
+    "notes": {
+      "ko": [
+        "5호 공식 신작 정식 출시! 4차선 사이버 하이웨이를 초고속 질주하는 한 손 스와이프·탭 아케이드 러너",
+        "인접 장애물 아슬아슬 통과 시 '니어미스 니트로(+25%)' 충전 → 100% 도달 시 무적 돌파 하이퍼 니트로 발동",
+        "플라즈마 실드·크레딧 자석 파워업, 보상형 광고(실드 부활·주행 크레딧 2배), 통합 트로피(500m 돌파) 및 CrazyGames/Poki 번들 탑재"
+      ],
+      "en": [
+        "Official Game #5 Launch! High-speed 4-lane neon highway runner built for instant mobile swipe/tap & desktop play.",
+        "Chain Near-Miss passes (+25% Nitro) to unleash invincible Hyper Nitro Overdrive and smash roadblocks.",
+        "Includes Shield & Magnet power-ups, rewarded revive/2x credits, 500m portal trophy, and CrazyGames/Poki bundles."
+      ]
+    }
+  },
+  {
     "date": "2026-11-26",
     "gameSlug": "neon-breaker",
     "gameTitle": { "ko": "네온 브레이커: 로그라이트", "en": "NEON BREAKER: ROGUELITE" },

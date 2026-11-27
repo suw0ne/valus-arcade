@@ -142,6 +142,7 @@
     const td = readLocalJson("nv_merge_td_save_v1");
     const dr = readLocalJson("nv_drill_core_save_v1");
     const br = readLocalJson("nv_breaker_save_v1");
+    const df = readLocalJson("nv_drift_save_v1");
 
     const fmtSec = (sec) => {
       const s = Math.floor(sec || 0);
@@ -176,6 +177,13 @@
         val: br.bestWave ? `STAGE ${br.bestWave}` : t("noRecord"),
         sub: lang === "ko" ? "트로피 조건: 스테이지 3 돌파" : "Trophy: Clear Stage 3",
         unlocked: (br.bestWave || 0) >= 3,
+      },
+      {
+        slug: "neon-drift",
+        name: lang === "ko" ? "네온 드리프트" : "NEON DRIFT",
+        val: df.bestDist ? `${df.bestDist}m` : t("noRecord"),
+        sub: lang === "ko" ? "트로피 조건: 500m 하이퍼 주행" : "Trophy: Drift past 500m",
+        unlocked: (df.bestDist || 0) >= 500,
       },
     ];
 

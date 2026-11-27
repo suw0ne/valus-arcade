@@ -2,7 +2,7 @@
  * 밸루스 아케이드 경량 오프라인 Service Worker (sw.js).
  * 외부 API/트래킹 0% · 정적 포털 셸 및 게임 번들을 로컬 캐싱해 모바일 재방문 시 0.1초 즉시 실행·오프라인 플레이를 지원한다.
  */
-const CACHE_NAME = "valus-arcade-v1-3-0";
+const CACHE_NAME = "valus-arcade-v1-4-0";
 
 const CORE_ASSETS = [
   "./",
@@ -19,6 +19,7 @@ const CORE_ASSETS = [
   "./assets/cover_core-merge-td.png",
   "./assets/cover_drill-to-core.png",
   "./assets/cover_neon-breaker.png",
+  "./assets/cover_neon-drift.png",
   "./games/neon-vanguard/index.html",
   "./games/neon-vanguard/css/style.css",
   "./games/neon-vanguard/js/i18n.js",
@@ -37,6 +38,9 @@ const CORE_ASSETS = [
   "./games/neon-breaker/index.html",
   "./games/neon-breaker/css/style.css",
   "./games/neon-breaker/js/game.js",
+  "./games/neon-drift/index.html",
+  "./games/neon-drift/css/style.css",
+  "./games/neon-drift/js/game.js",
 ];
 
 self.addEventListener("install", (event) => {

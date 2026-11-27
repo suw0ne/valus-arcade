@@ -103,6 +103,30 @@
       "monetization": ["보상형 광고(카드 리롤·2줄 파괴 부활)", "광고 제거 패스"],
       "releasedAt": "2026-11-26",
       "updatedAt": "2026-11-26"
+    },
+    {
+      "slug": "neon-drift",
+      "status": "live",
+      "featured": false,
+      "badge": { "ko": "신작 · v1.0", "en": "NEW · v1.0" },
+      "version": "1.0.0",
+      "genre": "action",
+      "genreLabel": { "ko": "하이퍼 스피드 레이서", "en": "Hyper Speed Runner" },
+      "title": { "ko": "네온 드리프트: 하이퍼 런", "en": "NEON DRIFT: HYPER RUN" },
+      "shortDesc": {
+        "ko": "4차선 네온 하이웨이 초고속 드리프트! 장애물 니어미스로 하이퍼 니트로를 충전해 무적 돌파하는 쾌감 러너",
+        "en": "High-speed 4-lane cyber highway drift! Chain near-misses to ignite invincible Hyper Nitro Overdrive."
+      },
+      "controls": {
+        "ko": "차선 전환: A/D · 방향키 · 화면 좌우 스와이프/탭 · 하이퍼 니트로: SPACE / 위로 스와이프 / 하단 버튼",
+        "en": "Switch Lane: A/D · Arrows · Swipe/Tap · Hyper Nitro: SPACE / Swipe Up / Bottom Button"
+      },
+      "tags": ["스피드러너", "니어미스", "한손조작", "모바일최적화"],
+      "cover": "assets/cover_neon-drift.png",
+      "playUrl": "games/neon-drift/index.html",
+      "monetization": ["보상형 광고(실드 부활·크레딧 2배)", "광고 제거 패스"],
+      "releasedAt": "2026-11-27",
+      "updatedAt": "2026-11-27"
     }
   ]
 }

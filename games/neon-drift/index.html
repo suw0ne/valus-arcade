@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>네온 드리프트: 하이퍼 런 | NEON DRIFT</title>
+  <!-- PORTAL_SDK_SLOT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="drift-shell">
+    <header class="drift-hud">
+      <div class="hud-left">
+        <div class="chip cyan"><span data-i18n="dist">거리</span> <strong id="ui-dist">0m</strong></div>
+        <div class="chip gold">◆ <strong id="ui-coins">0</strong></div>
+        <div class="chip pink"><span data-i18n="speed">속도</span> <strong id="ui-speed">1.0x</strong></div>
+      </div>
+      <div class="hud-right">
+        <button id="btn-sound" class="ctrl-btn" aria-label="Sound">🔊</button>
+        <button id="btn-lang" class="ctrl-btn">KR/EN</button>
+      </div>
+    </header>
+
+    <div class="stage-wrap">
+      <canvas id="drift-canvas"></canvas>
+      <div id="hud-banner" class="hud-banner hidden"></div>
+      <div class="mobile-controls">
+        <button id="btn-left" class="steer-btn" aria-label="Left">◀</button>
+        <button id="btn-nitro" class="nitro-btn" disabled>⚡ <span data-i18n="nitro">니트로</span> <small id="ui-nitro-pct">0%</small></button>
+        <button id="btn-right" class="steer-btn" aria-label="Right">▶</button>
+      </div>
+    </div>
+
+    <!-- 시작 화면 -->
+    <div id="start-overlay" class="overlay">
+      <div class="modal-card">
+        <span class="kicker" data-i18n="kicker">HYPER SPEED NEON RUNNER</span>
+        <h1 data-i18n="title">네온 드리프트</h1>
+        <p data-i18n="intro">좌우 스와이프·터치 또는 방향키로 4차선 네온 하이웨이를 질주하세요! 장애물을 아슬아슬하게 스치면 니어미스 니트로가 충전됩니다.</p>
+        <div class="best-row">
+          <div><span data-i18n="bestDist">최고 주행 거리</span><strong id="ui-best-dist" class="cyan">0m</strong></div>
+          <div><span data-i18n="totalCoins">누적 코어 크레딧</span><strong id="ui-total-coins" class="gold">0</strong></div>
+        </div>
+        <button id="btn-start" class="btn-primary" data-i18n="start">▶ 하이퍼 주행 시작</button>
+      </div>
+    </div>
+
+    <!-- 게임오버 / 보상형 부활 모달 -->
+    <div id="gameover-overlay" class="overlay hidden">
+      <div class="modal-card">
+        <h2 data-i18n="crashed">하이웨이 충돌!</h2>
+        <p id="ui-final" class="final-txt"></p>
+        <div class="stack-btns">
+          <button id="btn-revive" class="btn-reward">🛡️ <span data-i18n="reviveAd">광고 보고 실드 부활 + 계속 주행 (1회)</span></button>
+          <button id="btn-double" class="btn-reward alt">◆ <span data-i18n="doubleAd">광고 보고 이번 주행 크레딧 2배</span></button>
+          <button id="btn-retry" class="btn-primary" data-i18n="retry">다시 주행하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로컬 광고 시뮬레이터 -->
+    <div id="ad-modal" class="overlay hidden">
+      <div class="modal-card compact">
+        <span class="kicker">REWARDED AD PREVIEW</span>
+        <p data-i18n="adDesc">포털 배포 시 실제 보상형 광고가 재생됩니다.</p>
+        <div class="ad-track"><div id="ad-fill" class="ad-fill"></div></div>
+        <strong id="ad-timer" class="gold">2.0s</strong>
+      </div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -11,3 +11,4 @@
 - [코어 머지 디펜스 (CORE MERGE TD)](https://suw0ne.github.io/valus-arcade/play.html?game=core-merge-td): 머지 타워 디펜스 · v1.0.0 — 같은 등급 포탑을 드래그로 합쳐 전설 터렛으로 진화! 4대 속성 시너지로 밀려오는 웨이브를 막아라
 - [드릴 투 코어 (DRILL TO CORE)](https://suw0ne.github.io/valus-arcade/play.html?game=drill-to-core): 물리 굴착 성장 · v1.1.0 — 5개 지하 지층을 뚫고 1,200m 행성 코어까지! 연속 콤보 피버·자석/실드 유물·심도 미니맵 탑재 굴착 아케이드
 - [네온 브레이커: 로그라이트 (NEON BREAKER: ROGUELITE)](https://suw0ne.github.io/valus-arcade/play.html?game=neon-breaker): 로그라이트 벽돌깨기 · v1.0.0 — 드래그 조준 한 방에 50+ 네온 볼 연쇄 폭발! 레이저·폭탄 블록과 3스테이지 로그라이트 진화 카드로 무한 콤보 돌파
+- [네온 드리프트: 하이퍼 런 (NEON DRIFT: HYPER RUN)](https://suw0ne.github.io/valus-arcade/play.html?game=neon-drift): 하이퍼 스피드 레이서 · v1.0.0 — 4차선 네온 하이웨이 초고속 드리프트! 장애물 니어미스로 하이퍼 니트로를 충전해 무적 돌파하는 쾌감 러너
