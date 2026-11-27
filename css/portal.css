@@ -150,6 +150,28 @@ a { color: inherit; text-decoration: none; }
 .profile-val { font-size: 20px; font-weight: 900; color: #fff; line-height: 1.2; }
 .profile-sub { font-size: 11px; color: var(--muted); }
 
+/* 자체 스튜디오 하우스 배너 (빈 광고 슬롯 대체 · 외부 API 0%) */
+.house-banner {
+  margin: 22px 0; padding: 16px 20px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(14, 22, 41, 0.92));
+  border: 1px solid rgba(56, 189, 248, 0.42);
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px;
+}
+.house-banner.compact { margin: 0 0 14px; flex-direction: column; align-items: stretch; gap: 10px; padding: 14px; }
+.house-tag {
+  display: inline-block; font-size: 10px; font-weight: 900; letter-spacing: 0.14em;
+  color: var(--gold); background: rgba(250, 204, 21, 0.14); border: 1px solid rgba(250, 204, 21, 0.45);
+  padding: 2px 9px; border-radius: 999px; margin-bottom: 5px;
+}
+.house-banner strong { display: block; font-size: 15px; font-weight: 900; color: #fff; }
+.house-banner p { font-size: 12.5px; color: #cbd5e1; margin-top: 2px; }
+.house-banner-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.house-cta {
+  padding: 9px 14px; border-radius: 10px; font-size: 12px; font-weight: 900;
+  background: var(--surface-2); border: 1px solid var(--border-hi); color: #bae6fd; white-space: nowrap;
+}
+.house-cta.primary { background: linear-gradient(135deg, var(--blue), #0ea5e9); color: #fff; border-color: transparent; }
+
 /* 광고 슬롯 */
 .ad-banner-slot, .ad-box-slot {
   margin: 22px 0; padding: 14px; text-align: center;
